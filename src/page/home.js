@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import filter from "../assets/icon/filter.svg";
 import search from "../assets/icon/search-grey.svg";
 import ActivityCard from "../components/card";
+import SideFilter from "../components/sideFilter";
 
 const Home = () => {
   const [showFilter, setShowFlter] = useState(false);
@@ -14,7 +15,7 @@ const Home = () => {
             onClick={() => setShowFlter(!showFilter)}
           >
             <img src={filter} alt="" />
-            Show Filter
+            {showFilter ? "Hide" : "Show"} Filter
           </span>
 
           <span>
@@ -31,15 +32,19 @@ const Home = () => {
 
         <div className="activity-wrapper row position-relative">
           {showFilter && (
-            <div className="col-md-3 border ">
-              <h1 className="position-sticky top-0">FilterBox</h1>
+            <div className="col-md-3 px-0   ">
+              <div className="position-sticky top-0">
+                <SideFilter />
+              </div>
             </div>
           )}
-          <div className={` ${showFilter ? "col-md-9" : "col-12"}`}>
+          <div className={` ${showFilter ? "col-md-9" : "col-12 px-0  "}`}>
             <div className="row">
               {data.map((data, index) => (
                 <div
-                  className={` ${showFilter ? "col-md-4" : "col-md-3"} col-12`}
+                  className={` ${
+                    showFilter ? "col-md-4" : "col-md-3 px-0  "
+                  } col-12 px-0  `}
                 >
                   <ActivityCard key={index} {...data} />
                 </div>

@@ -8,11 +8,11 @@ const AcitivtyDetails = () => {
         <div className="container">
           <header>
             <div className="row  gx-5 ">
-              <div className="col-md-5 col-12 px-0 thumbnail">
+              <div className="col-md-5 col-12 px-0   px-0 thumbnail">
                 <img src={thumbnail} alt="" className="img-fluid" />
               </div>
-              <div className="col-md-1 col-12"></div>
-              <div className="col-md-6 col-12 py-5     ">
+              <div className="col-md-1 col-12 px-0  "></div>
+              <div className="col-md-6 px-0  col-12 px-0   py-5     ">
                 <label className="category medium">Category Name</label>
                 <h2 className="fw-semibold mt-2">Activity Name Here</h2>
                 <h5 className="text-capitalize mt-3">
@@ -48,8 +48,8 @@ const AcitivtyDetails = () => {
             </div>
           </header>
 
-          <div className="details    row border-tops    border-bottom border-dark-subtle">
-            <div className="col-md-3 col-12 px-0">
+          <div className="details gy-3    row border-tops    border-bottom border-dark-subtle">
+            <div className="col-md-3 px-0   col-12 px-0   px-0">
               <h5>Highlights</h5>
               <ul className="d-flex flex-column gap-1 mt-3">
                 <li>Lorem, ipsum dolor.</li>
@@ -59,7 +59,7 @@ const AcitivtyDetails = () => {
                 <li>Lorem, ipsum dolor.</li>
               </ul>
             </div>
-            <div className="col-md-5 col-12 px-0">
+            <div className="col-md-5 col-12 px-0   px-0">
               <h5>Short Discription</h5>
 
               <p className="small mt-3">
@@ -72,8 +72,8 @@ const AcitivtyDetails = () => {
                 Voluptas.
               </p>
             </div>
-            <div className="col-md-1 col-12 px-0"></div>
-            <div className="col-md-3 col-12 px-0">
+            <div className="col-md-1 col-12 px-0   px-0"></div>
+            <div className="col-md-3 px-0   col-12 px-0   px-0">
               <h5>Opening Hours</h5>
               <p className="small mt-3 v-center justify-content-between">
                 <span className="fw-medium v-center gap-2">
@@ -99,7 +99,7 @@ const AcitivtyDetails = () => {
           </div>
 
           <div className="row mt-5  ">
-            <div className="col-12 border-bottom border-dark-subtle mb-5 pb-5">
+            <div className="col-12 px-0   border-bottom border-dark-subtle mb-5 pb-5">
               <h5>Long Discription</h5>
 
               <p className="small mt-3">
@@ -117,27 +117,27 @@ const AcitivtyDetails = () => {
               </p>
             </div>
 
-            <div className="col-12 border-bottom border-dark-subtle mb-5 pb-5">
+            <div className="col-12 px-0   border-bottom border-dark-subtle mb-5 pb-5">
               <div className="row  more-imgs">
-                <div className="col-lg-3 col-md-4 col-12 m-auto">
+                <div className="col-lg-3 col-md-4 col-12 px-0   m-auto">
                   <img src={thumbnail} alt="" className="img-fluid" />
                 </div>
 
-                <div className="col-lg-3 col-md-4 col-12 m-auto">
+                <div className="col-lg-3 col-md-4 col-12 px-0   m-auto">
                   <img src={thumbnail} alt="" className="img-fluid" />
                 </div>
 
-                <div className="col-lg-3 col-md-4 col-12 m-auto">
+                <div className="col-lg-3 col-md-4 col-12 px-0   m-auto">
                   <img src={thumbnail} alt="" className="img-fluid" />
                 </div>
 
-                <div className="col-lg-3 col-md-4 col-12 m-auto">
+                <div className="col-lg-3 col-md-4 col-12 px-0   m-auto">
                   <img src={thumbnail} alt="" className="img-fluid" />
                 </div>
               </div>
             </div>
 
-            <div className="col-12 border-bottom border-dark-subtle mb-5 pb-5">
+            <div className="col-12 px-0   border-bottom border-dark-subtle mb-5 pb-5">
               <h5>Additional Details:</h5>
 
               <div className="mt-4 d-flex flex-column gap-4">
