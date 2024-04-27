@@ -1,0 +1,19 @@
+@import url("./_global.scss");
+
+// base style
+@import url("./base/_color.scss");
+@import url("./base/_mixins.scss");
+@import url("./base/_reset.scss");
+@import url("./base/_typography.scss");
+
+// components
+@import url("./components/_button.scss");
+@import url("./components/_input.scss");
+@import url("./components/_select.scss");
+@import url("./components/_checkbox.scss");
+@import url("./components/_switch.scss");
+@import url("./components/_tab.scss");
+@import url("./components/_pagination.scss");
+@import url("./components/_activityCard.scss");
+@import url("./components/page/_home.scss");
+@import url("./components/page/_activity-details.scss");

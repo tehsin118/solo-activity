@@ -1,0 +1,16 @@
+.input-box {
+  border: 1px solid #757574;
+  padding: 8px 12px;
+  border-radius: 8px;
+  input {
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+  &.inactive-search {
+    width: 50px;
+  }
+  &.active-search {
+    width: 100%;
+  }
+}

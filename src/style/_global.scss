@@ -1,0 +1,38 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+// ---------------custom margins
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+// ---------------custom image sizes
+.img-100 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+input {
+  outline: none;
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+  &::-webkit-outer-spin-button {
+    display: none;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.v-center {
+  display: flex;
+  align-items: center;
+}
