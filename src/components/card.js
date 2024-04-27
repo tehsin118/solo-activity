@@ -6,7 +6,7 @@ const ActivityCard = (data) => {
 
   const navigate = useNavigate();
   return (
-    <div>
+    <>
       <div className="activity-card ">
         <div className="card-body w-100 h-100">
           <img src={img} alt="" className="img-fluids" />
@@ -22,7 +22,7 @@ const ActivityCard = (data) => {
           <a onClick={() => navigate("/activity-details")}>Read More</a>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -39,12 +39,12 @@ const Home = () => {
             </div>
           )}
           <div className={` ${showFilter ? "col-md-9" : "col-12 px-0  "}`}>
-            <div className="row">
+            <div className="row gx-3">
               {data.map((data, index) => (
                 <div
-                  className={` ${
-                    showFilter ? "col-md-4" : "col-md-3 px-0  "
-                  } col-12 px-0  `}
+                  className={` col-12 mb-4   ${
+                    showFilter ? "col-md-4" : "col-md-3   "
+                  } `}
                 >
                   <ActivityCard key={index} {...data} />
                 </div>
