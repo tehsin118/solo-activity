@@ -32,18 +32,20 @@ const Home = () => {
 
         <div className="activity-wrapper row position-relative">
           {showFilter && (
-            <div className="col-md-3 px-0   ">
+            <div className="col-lg-2  px-0   ">
               <div className="position-sticky top-0">
                 <SideFilter />
               </div>
             </div>
           )}
-          <div className={` ${showFilter ? "col-md-9" : "col-12 px-0  "}`}>
+          <div className={`px-0 ${showFilter ? "col-lg-10" : "col-12"}`}>
             <div className="row gx-3">
               {data.map((data, index) => (
                 <div
-                  className={` col-12 mb-4   ${
-                    showFilter ? "col-md-4" : "col-md-3   "
+                  className={` mb-4 d-flex justify-content-center  ${
+                    showFilter
+                      ? "col-xl-4  col-lg-4  col-12 ss"
+                      : "ssb col-xl-3  col-lg-4  col-12 ssb"
                   } `}
                 >
                   <ActivityCard key={index} {...data} />
