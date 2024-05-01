@@ -1,12 +1,42 @@
 import React from "react";
-import thumbnail from "../assets/image/artwork-preview-1.png";
+import thumbnail from "../assets/image/artwork2.png";
+import bannerImg from "../assets/image/banner.jpg";
 import { Icon } from "@iconify/react";
+import { CiLocationOn } from "react-icons/ci";
+
 const AcitivtyDetails = () => {
   return (
     <div>
       <div className="activity-details">
+        <header>
+          <img src={bannerImg} alt="" className="w-100 h-100" />
+
+          <div className="banner-content">
+            <div className="container position-relative">
+              <h1>Arknights</h1>
+              <ul>
+                <li>
+                  <span>Location</span>
+                  <span>Islamabad</span>
+                </li>{" "}
+                <li>
+                  <span>Email</span>
+                  <span>contact@activity.com</span>
+                </li>{" "}
+                <li>
+                  <span>Phone</span>
+                  <span> +934892184</span>
+                </li>
+              </ul>
+              <a href="#">Go to Website</a>
+
+              <h6 className="text-white">Category: Adventure</h6>
+            </div>
+          </div>
+        </header>
+
         <div className="container">
-          <header>
+          <div className="d-none">
             <div className="row  gx-5 ">
               <div className="col-md-5 col-12 px-0   px-0 thumbnail">
                 <img src={thumbnail} alt="" className="img-fluid" />
@@ -46,30 +76,32 @@ const AcitivtyDetails = () => {
                 </div>
               </div>
             </div>
-          </header>
+          </div>
 
-          <div className="details gy-3    row border-tops    border-bottom border-dark-subtle">
+          <div className="details gy-3 row">
             <div className="col-md-3 px-0   col-12 px-0   px-0">
               <h5>Highlights</h5>
-              <ul className="d-flex flex-column gap-1 mt-3">
-                <li>Lorem, ipsum dolor.</li>
-                <li>Lorem, ipsum dolor.</li>
-                <li>Lorem, ipsum dolor.</li>
-                <li>Lorem, ipsum dolor.</li>
-                <li>Lorem, ipsum dolor.</li>
+              <ul className="d-flex flex-column gap-1 mt-3 ps-3">
+                <li>Official Google experience.</li>
+                <li>Bigger screen.</li>
+                <li>Level up with improved controls .</li>
+                <li>Seamless sync across devices.</li>
+                <li>Earn Google Play Points .</li>
               </ul>
             </div>
             <div className="col-md-5 col-12 px-0   px-0">
               <h5>Short Discription</h5>
 
               <p className="small mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                non autem harum aliquam quisquam sed, nostrum expedita doloribus
-                corrupti quod amet quis impedit fugiat molestiae excepturi vitae
-                similique aspernatur est eligendi blanditiis neque adipisci
-                voluptate minus ipsam. Officia laborum iste repellendus quos
-                deleniti labore praesentium deserunt assumenda ipsa aut.
-                Voluptas.
+                Take on the role of a key member of Rhodes Island, a
+                pharmaceutical company that fights both a deadly infection and
+                the unrest it leaves in its wake. Together with your leader
+                Amiya, you’ll recruit Operators, train them, then assign them to
+                various operations to protect the innocent and resist those who
+                would thrust the world into turmoil.Your tactics will determine
+                the future of Rhodes Island. Fight for the Dawn! This enables
+                user to download a hotfix package immediately when it's
+                available. This does not compromise user's privacy.
               </p>
             </div>
             <div className="col-md-1 col-12 px-0   px-0"></div>
@@ -83,7 +115,127 @@ const AcitivtyDetails = () => {
                     height="1.3rem"
                     style={{ color: "black" }}
                   />
-                  Monday - Friday
+                  Monday
+                </span>
+                <span className="fw-medium v-center gap-2">
+                  <Icon
+                    icon="majesticons:clock-line"
+                    width="1.3rem"
+                    height="1.3rem"
+                    style={{ color: "black" }}
+                  />
+                  08:00 - 14:00
+                </span>
+              </p>
+              <p className="small mt-1 v-center justify-content-between">
+                <span className="fw-medium v-center gap-2">
+                  <Icon
+                    icon="ci:calendar-days"
+                    width="1.3rem"
+                    height="1.3rem"
+                    style={{ color: "black" }}
+                  />
+                  Tuesday
+                </span>
+                <span className="fw-medium v-center gap-2">
+                  <Icon
+                    icon="majesticons:clock-line"
+                    width="1.3rem"
+                    height="1.3rem"
+                    style={{ color: "black" }}
+                  />
+                  08:00 - 14:00
+                </span>
+              </p>
+              <p className="small mt-1 v-center justify-content-between">
+                <span className="fw-medium v-center gap-2">
+                  <Icon
+                    icon="ci:calendar-days"
+                    width="1.3rem"
+                    height="1.3rem"
+                    style={{ color: "black" }}
+                  />
+                  Wednesday
+                </span>
+                <span className="fw-medium v-center gap-2">
+                  <Icon
+                    icon="majesticons:clock-line"
+                    width="1.3rem"
+                    height="1.3rem"
+                    style={{ color: "black" }}
+                  />
+                  08:00 - 14:00
+                </span>
+              </p>
+              <p className="small mt-1 v-center justify-content-between">
+                <span className="fw-medium v-center gap-2">
+                  <Icon
+                    icon="ci:calendar-days"
+                    width="1.3rem"
+                    height="1.3rem"
+                    style={{ color: "black" }}
+                  />
+                  Thursday
+                </span>
+                <span className="fw-medium v-center gap-2">
+                  <Icon
+                    icon="majesticons:clock-line"
+                    width="1.3rem"
+                    height="1.3rem"
+                    style={{ color: "black" }}
+                  />
+                  08:00 - 14:00
+                </span>
+              </p>
+              <p className="small mt-1 v-center justify-content-between">
+                <span className="fw-medium v-center gap-2">
+                  <Icon
+                    icon="ci:calendar-days"
+                    width="1.3rem"
+                    height="1.3rem"
+                    style={{ color: "black" }}
+                  />
+                  Friday
+                </span>
+                <span className="fw-medium v-center gap-2">
+                  <Icon
+                    icon="majesticons:clock-line"
+                    width="1.3rem"
+                    height="1.3rem"
+                    style={{ color: "black" }}
+                  />
+                  08:00 - 14:00
+                </span>
+              </p>
+              <p className="small mt-1 v-center justify-content-between">
+                <span className="fw-medium v-center gap-2">
+                  <Icon
+                    icon="ci:calendar-days"
+                    width="1.3rem"
+                    height="1.3rem"
+                    style={{ color: "black" }}
+                  />
+                  Saturday
+                </span>
+                <span className="fw-medium v-center gap-2">
+                  <Icon
+                    icon="majesticons:clock-line"
+                    width="1.3rem"
+                    height="1.3rem"
+                    style={{ color: "black" }}
+                  />
+                  08:00 - 14:00
+                </span>
+              </p>
+              <p className="small mt-1 v-center justify-content-between">
+                <span className="fw-medium v-center gap-2">
+                  <Icon
+                    icon="ci:calendar-days"
+                    width="1.3rem"
+                    height="1.3rem"
+                    style={{ color: "black" }}
+                  />
+                  Sunday
                 </span>
                 <span className="fw-medium v-center gap-2">
                   <Icon
@@ -98,114 +250,91 @@ const AcitivtyDetails = () => {
             </div>
           </div>
 
-          <div className="row mt-5  ">
-            <div className="col-12 px-0   border-bottom border-dark-subtle mb-5 pb-5">
-              <h5>Long Discription</h5>
-
+          <div className="row mt-4">
+            <div className="col-12 px-0    mb-5  ">
               <p className="small mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                non autem harum aliquam quisquam sed, nostrum expedita doloribus
-                corrupti quod amet quis impedit fugiat molestiae excepturi vitae
-                similique aspernatur est eligendi blanditiis neque adipisci
-                voluptate minus ipsam. Officia laborum iste repellendus quos
-                deleniti labore praesentium deserunt assumenda ipsa aut.
-                Voluptas. Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Praesentium soluta vel provident fugiat, odio animi cum
-                distinctio veritatis voluptatibus rem assumenda dolorum
-                repellendus? Adipisci natus explicabo consequuntur debitis quia
-                hic.
+                Take on the role of a key member of Rhodes Island, a
+                pharmaceutical company that fights both a deadly infection and
+                the unrest it leaves in its wake. Together with your leader
+                Amiya, you’ll recruit Operators, train them, then assign them to
+                various operations to protect the innocent and resist those who
+                would thrust the world into turmoil. Your tactics will determine
+                the future of Rhodes Island. Fight for the Dawn! Gorgeous
+                anime-style game with a perfect combination of RPG and strategy
+                elements ・Hundreds of unique Operators across a variety of
+                classes open up countless gameplay options ・Auto Deploy system
+                conveniently allows you to free up your hands ・Carve out a
+                home, just the way you want it, with the Base construction
+                system ・A robust soundtrack and some of the most famous
+                Japanese voice actors and actresses will give you a sublime
+                auditory experience.
               </p>
             </div>
 
-            <div className="col-12 px-0   border-bottom border-dark-subtle mb-5 pb-5">
+            <div className="col-12 px-0 mb-2 pb-5">
               <div className="row  more-imgs">
-                <div className="col-lg-3 col-md-4 col-12 px-0   m-auto">
-                  <img src={thumbnail} alt="" className="img-fluid" />
-                </div>
-
-                <div className="col-lg-3 col-md-4 col-12 px-0   m-auto">
-                  <img src={thumbnail} alt="" className="img-fluid" />
-                </div>
-
-                <div className="col-lg-3 col-md-4 col-12 px-0   m-auto">
-                  <img src={thumbnail} alt="" className="img-fluid" />
-                </div>
-
-                <div className="col-lg-3 col-md-4 col-12 px-0   m-auto">
-                  <img src={thumbnail} alt="" className="img-fluid" />
-                </div>
+                <img src={thumbnail} alt="" className="img-fluid" />
+                <img src={thumbnail} alt="" className="img-fluid" />
+                <img src={thumbnail} alt="" className="img-fluid" />
+                <img src={thumbnail} alt="" className="img-fluid" />
               </div>
             </div>
 
-            <div className="col-12 px-0   border-bottom border-dark-subtle mb-5 pb-5">
+            <div className="col-12 px-0     mb-5 pb-5">
               <h5>Additional Details:</h5>
 
-              <div className="mt-4 d-flex flex-column gap-4">
+              <div className="mt-4 d-flex flex-column gap-3">
                 <div>
-                  <h6 className="fw-semibold mb-2 text-capitalize">
+                  <h6 className="fw-semibold mb-2 text-capitalize v-center gap-1">
+                    <Icon
+                      icon="icon-park-outline:people-speak"
+                      width="21"
+                      height="21"
+                    />
                     Highlights:
                   </h6>
-                  <p className="small">Lorem ipsum dolor sit.</p>
+                  <p className="small">
+                    Hundreds of unique Operators across a variety of classes
+                    open up countless gameplay options.
+                  </p>
                 </div>
-                <div>
-                  <h6 className="fw-semibold mb-2 text-capitalize">
-                    provider:
+                {/* <div>
+                  <h6 className="fw-semibold mb-2 text-capitalize v-center gap-1">
+                    <Icon
+                      icon="icon-park-outline:people-speak"
+                      width="21"
+                      height="21"
+                    />
+                    Provider:
                   </h6>
                   <p className="small">Lorem ipsum dolor sit.</p>
-                </div>
+                </div> */}
+
                 <div>
-                  <h6 className="fw-semibold  mb-2 text-capitalize v-center">
+                  <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
+                    <Icon
+                      icon="system-uicons:location"
+                      width="21"
+                      height="21"
+                    />
                     location:
                   </h6>
-                  <p className="small">Lorem ipsum dolor sit.</p>
+                  <p className="small">Islamabad.</p>
                 </div>
                 <div>
-                  <h6 className="fw-semibold  mb-2 text-capitalize">
+                  <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
+                    <Icon icon="entypo:man" width="21" height="21" />
                     age Requirement:
                   </h6>
-                  <p className="small">Lorem ipsum dolor sit.</p>
+                  <p className="small">18 Years - 32 Years.</p>
                 </div>
+
                 <div>
-                  <h6 className="fw-semibold  mb-2 text-capitalize">
-                    equipment:
-                  </h6>
-                  <p className="small">Lorem ipsum dolor sit.</p>
-                </div>
-                <div>
-                  <h6 className="fw-semibold  mb-2 text-capitalize">
-                    max People:
-                  </h6>
-                  <p className="small">Lorem ipsum dolor sit.</p>
-                </div>
-                <div>
-                  <h6 className="fw-semibold  mb-2 text-capitalize">
-                    minPeople:
-                  </h6>
-                  <p className="small">Lorem ipsum dolor sit.</p>
-                </div>
-                <div>
-                  <h6 className="fw-semibold  mb-2 text-capitalize">
+                  <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
+                    <Icon icon="game-icons:duration" width="22" height="22" />
                     duration:
                   </h6>
-                  <p className="small">Lorem ipsum dolor sit.</p>
-                </div>
-                <div>
-                  <h6 className="fw-semibold  mb-2 text-capitalize">
-                    additionalInfo:
-                  </h6>
-                  <p className="small">Lorem ipsum dolor sit.</p>
-                </div>
-                <div>
-                  <h6 className="fw-semibold  mb-2 text-capitalize">
-                    popularity:
-                  </h6>
-                  <p className="small">0</p>
-                </div>
-                <div>
-                  <h6 className="fw-semibold  mb-2 text-capitalize">
-                    language:
-                  </h6>
-                  <p className="small">Lorem ipsum dolor sit.</p>
+                  <p className="small">03 Month 12 Hours</p>
                 </div>
               </div>
             </div>

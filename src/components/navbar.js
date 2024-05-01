@@ -1,20 +1,26 @@
 import React from "react";
-import user from "../assets/icon/profile-large.svg";
+import user from "../assets/icon/user.png";
+import logo from "../assets/image/logo.png";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <header className="nav border-bottom border-dark-subtle  mt-5 pb-3">
+      <nav className="nav border-bottom border-dark-subtle pt-2">
         <div className="container v-center justify-content-between">
-          <div className="hide-on-mobile"></div>
-          <h1 className="text-center ">Solo Explore Activities</h1>
+          <Link to="/">
+            <img src={logo} alt="" className="logo" />
+          </Link>
+
+          <h1 className="text-center ">
+            Solo <span className="hide-on-mobile">Explore</span> Activities
+          </h1>
           <div className="v-center">
-            {/* <button>Login</button> */}
             <div className="logged">
               <img src={user} alt="" />
             </div>
           </div>
         </div>
-      </header>
+      </nav>
     </div>
   );
 };

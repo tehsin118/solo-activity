@@ -15,11 +15,14 @@ const Home = () => {
             onClick={() => setShowFlter(!showFilter)}
           >
             <img src={filter} alt="" />
-            {showFilter ? "Hide" : "Show"} Filter
+            <span className="d-md-block d-none">
+              {showFilter ? "Hide" : "Show"}
+            </span>
+            Filter
           </span>
 
           <span>
-            <div className="input-box d-flex align-items-center  pointer active-search">
+            <div className="input-box d-flex align-items-center  pointer  search-box">
               <input
                 type="text"
                 name="searchBox"

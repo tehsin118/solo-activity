@@ -11,13 +11,13 @@ h1 {
 }
 
 h3 {
-  font-family: Roboto;
+  font-family: Poppins;
   font-size: 24px;
   font-weight: 700;
 }
 
 p {
-  font-family: Inter;
+  font-family: Poppins;
   font-size: 20.159px;
   font-weight: 400;
 }
@@ -26,6 +26,9 @@ p.medium {
 }
 p.small {
   font-size: 14px;
+}
+p.smaller {
+  font-size: 13px;
 }
 
 label {

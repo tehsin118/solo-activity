@@ -7,10 +7,15 @@
     width: 100%;
     border: none;
   }
-  &.inactive-search {
-    width: 50px;
+}
+.search-box {
+  width: 50px;
+  transition: all 0.3 linear;
+  &:hover {
+    transition: all 0.3 linear;
+    width: 100%;
   }
-  &.active-search {
+  &:focus-within {
     width: 100%;
   }
 }
