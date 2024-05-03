@@ -21,6 +21,7 @@ const Slider = () => {
         effect={"cards"}
         grabCursor={true}
         centeredSlides={true}
+        initialSlide={2}
         slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 50,
@@ -40,10 +41,13 @@ const Slider = () => {
           <Image src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
         </SwiperSlide>{" "}
         <SwiperSlide>
-          <Image src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+          <Image src="https://swiperjs.com/demos/images/nature-2.jpg" />
         </SwiperSlide>{" "}
         <SwiperSlide>
-          <Image src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+          <Image src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <Image src="https://swiperjs.com/demos/images/nature-4.jpg" />
         </SwiperSlide>
       </Swiper>
     </>

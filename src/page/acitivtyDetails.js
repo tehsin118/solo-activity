@@ -309,7 +309,7 @@ const AcitivtyDetails = () => {
                 </div>
               </div>
 
-              <div className="col-12 px-0     mb-5 pb-5">
+              <div className="col-12 px-0   mt-3  mb-5 pb-5">
                 <h5>Additional Details:</h5>
 
                 <div className="mt-4 d-flex flex-column gap-3">
