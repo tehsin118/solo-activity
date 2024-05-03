@@ -10,14 +10,9 @@ const Home = () => {
     <>
       <div className="container">
         <div className="filter-header border-bottom border-dark-subtle">
-          <span
-            className="d-flex align-items-center gap-2 pointer fw-medium"
-            onClick={() => setShowFlter(!showFilter)}
-          >
+          <span className="d-flex align-items-center gap-2 pointer fw-medium">
             <img src={filter} alt="" />
-            <span className="d-md-block d-none">
-              {showFilter ? "Hide" : "Show"}
-            </span>
+            <span className="d-md-block d-none">Show</span>
             Filter
           </span>
 
@@ -44,13 +39,7 @@ const Home = () => {
           <div className={`px-0 ${showFilter ? "col-lg-10" : "col-12"}`}>
             <div className="row gx-3">
               {data.map((data, index) => (
-                <div
-                  className={` mb-4 d-flex justify-content-center  ${
-                    showFilter
-                      ? "col-xl-4  col-lg-4  col-12 ss"
-                      : "ssb col-xl-3  col-lg-4  col-12 ssb"
-                  } `}
-                >
+                <div className=" mb-4 d-flex justify-content-center col-xl-3  col-lg-4  col-12 ssb ">
                   <ActivityCard key={index} {...data} />
                 </div>
               ))}

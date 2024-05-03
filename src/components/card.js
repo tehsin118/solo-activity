@@ -12,14 +12,16 @@ const ActivityCard = (data) => {
           <img src={img} alt="" className="img-fluids" />
         </div>
         <div className="footer pt-2 ">
-          <h3>Card Head</h3>
+          <div className="v-center justify-content-between">
+            <h3>Card Head</h3>
+            <a onClick={() => navigate("/activity-details")}>Read More</a>
+          </div>
           <p className="small mt-2 mb-2">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi,
             quibusdam suscipit? Quasi aspernatur saepe veritatis placeat quas et
             architecto enim reiciendis omnis quo minima rem, ipsam cumque!
             Laboriosam, vero aliquam!
           </p>
-          <a onClick={() => navigate("/activity-details")}>Read More</a>
         </div>
       </div>
     </>

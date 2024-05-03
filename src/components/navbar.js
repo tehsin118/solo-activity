@@ -7,12 +7,13 @@ const Navbar = () => {
     <div>
       <nav className="nav border-bottom border-dark-subtle pt-2">
         <div className="container v-center justify-content-between">
-          <Link to="/">
+          <Link to="/" className="v-center">
             <img src={logo} alt="" className="logo" />
+            <h1 className="text-black">Solos</h1>
           </Link>
 
           <h1 className="text-center ">
-            Solo <span className="hide-on-mobile">Explore</span> Activities
+            <span className=" ">Explore</span>
           </h1>
           <div className="v-center">
             <div className="logged">

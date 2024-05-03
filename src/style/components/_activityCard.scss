@@ -2,12 +2,12 @@
   max-width: 20rem;
   width: 100%;
   height: 19rem;
-  background-color: #d3d3d3;
-  padding: 10px;
-  border-radius: 10px;
+
+  padding: 0px;
+  border-radius: 40px;
   position: relative;
   overflow: hidden;
-
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   .card-body {
     position: relative;
     border-radius: 10px;
@@ -38,12 +38,11 @@
     position: absolute;
     left: 20px;
     right: 20px;
-    bottom: 30px;
+    bottom: 20px;
     color: white;
     z-index: 2;
 
-    p,
-    a {
+    p {
       position: absolute;
       opacity: 0;
     }
@@ -54,6 +53,8 @@
       border-radius: 50px;
       font-size: 12px;
       cursor: pointer;
+      position: relative;
+      opacity: 1;
       &:hover {
         color: #000;
       }
