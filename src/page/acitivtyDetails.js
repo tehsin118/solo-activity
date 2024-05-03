@@ -90,10 +90,10 @@ const AcitivtyDetails = () => {
           </div>
 
           {/* hightlisghts */}
-          <div className="">
+          <div className="highlight">
             <div className="container ">
-              <div className="row gy-3 details">
-                <div className="col-md-3 px-0   col-12 px-0   px-0">
+              <div className="row gx-3 gy-3 details">
+                <div className="col-md-4 px-0   col-12 px-0   px-0">
                   <h5>Highlights</h5>
                   <ul className="d-flex flex-column gap-1 mt-3 ps-3">
                     <li>Official Google experience.</li>
@@ -103,7 +103,7 @@ const AcitivtyDetails = () => {
                     <li>Earn Google Play Points .</li>
                   </ul>
                 </div>
-                <div className="col-md-5 col-12 px-0   px-0">
+                <div className="col-md-4 col-12 px-0   px-0">
                   <h5>Short Discription</h5>
 
                   <p className="small mt-3">
@@ -119,149 +119,151 @@ const AcitivtyDetails = () => {
                     not compromise user's privacy.
                   </p>
                 </div>
-                <div className="col-md-1 col-12 px-0   px-0"></div>
-                <div className="col-md-3 px-0   col-12 px-0   px-0">
-                  <h5>Opening Hours</h5>
-                  <p className="small mt-3 v-center justify-content-between">
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="ci:calendar-days"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      Monday
-                    </span>
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="majesticons:clock-line"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      08:00 - 14:00
-                    </span>
-                  </p>
-                  <p className="small mt-1 v-center justify-content-between">
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="ci:calendar-days"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      Tuesday
-                    </span>
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="majesticons:clock-line"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      08:00 - 14:00
-                    </span>
-                  </p>
-                  <p className="small mt-1 v-center justify-content-between">
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="ci:calendar-days"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      Wednesday
-                    </span>
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="majesticons:clock-line"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      08:00 - 14:00
-                    </span>
-                  </p>
-                  <p className="small mt-1 v-center justify-content-between">
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="ci:calendar-days"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      Thursday
-                    </span>
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="majesticons:clock-line"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      08:00 - 14:00
-                    </span>
-                  </p>
-                  <p className="small mt-1 v-center justify-content-between">
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="ci:calendar-days"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      Friday
-                    </span>
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="majesticons:clock-line"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      08:00 - 14:00
-                    </span>
-                  </p>
-                  <p className="small mt-1 v-center justify-content-between">
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="ci:calendar-days"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      Saturday
-                    </span>
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="majesticons:clock-line"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      08:00 - 14:00
-                    </span>
-                  </p>
-                  <p className="small mt-1 v-center justify-content-between">
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="ci:calendar-days"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      Sunday
-                    </span>
-                    <span className="fw-medium v-center gap-2">
-                      <Icon
-                        icon="majesticons:clock-line"
-                        width="1.3rem"
-                        height="1.3rem"
-                        style={{ color: "black" }}
-                      />
-                      08:00 - 14:00
-                    </span>
-                  </p>
+
+                <div className="col-md-4 d-flex justify-content-end px-0    col-12 px-0   px-0">
+                  <div className="w-75">
+                    <h5>Opening Hours</h5>
+                    <p className="small mt-3 v-center justify-content-between">
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="ci:calendar-days"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        Monday
+                      </span>
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="majesticons:clock-line"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        08:00 - 14:00
+                      </span>
+                    </p>
+                    <p className="small mt-1 v-center justify-content-between">
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="ci:calendar-days"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        Tuesday
+                      </span>
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="majesticons:clock-line"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        08:00 - 14:00
+                      </span>
+                    </p>
+                    <p className="small mt-1 v-center justify-content-between">
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="ci:calendar-days"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        Wednesday
+                      </span>
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="majesticons:clock-line"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        08:00 - 14:00
+                      </span>
+                    </p>
+                    <p className="small mt-1 v-center justify-content-between">
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="ci:calendar-days"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        Thursday
+                      </span>
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="majesticons:clock-line"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        08:00 - 14:00
+                      </span>
+                    </p>
+                    <p className="small mt-1 v-center justify-content-between">
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="ci:calendar-days"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        Friday
+                      </span>
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="majesticons:clock-line"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        08:00 - 14:00
+                      </span>
+                    </p>
+                    <p className="small mt-1 v-center justify-content-between">
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="ci:calendar-days"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        Saturday
+                      </span>
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="majesticons:clock-line"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        08:00 - 14:00
+                      </span>
+                    </p>
+                    <p className="small mt-1 v-center justify-content-between">
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="ci:calendar-days"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        Sunday
+                      </span>
+                      <span className="fw-medium v-center gap-2">
+                        <Icon
+                          icon="majesticons:clock-line"
+                          width="1.3rem"
+                          height="1.3rem"
+                          style={{ color: "black" }}
+                        />
+                        08:00 - 14:00
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -131,6 +131,47 @@
   }
 }
 
+.filter-content {
+  position: absolute;
+  left: 0;
+}
+.highlight {
+  .details {
+    & > div {
+      &:first-child {
+        // background-color: red;
+        position: relative;
+        ul {
+          li {
+            font-size: 14px;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          right: 15%;
+          top: 0;
+          width: 1px;
+          height: 100%;
+          background-color: #d3d3d3;
+        }
+      }
+      &:last-child {
+        // background-color: red;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 15%;
+          top: 0;
+          width: 1px;
+          height: 100%;
+          background-color: #d3d3d3;
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 767px) {
   .nav {
     h1 {
