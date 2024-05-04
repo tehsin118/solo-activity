@@ -47,7 +47,7 @@ const Slider = () => {
           <Image src="https://swiperjs.com/demos/images/nature-3.jpg" />
         </SwiperSlide>{" "}
         <SwiperSlide>
-          <Image src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <Image src="https://swiperjs.com/demos/images/nature-3.jpg" />
         </SwiperSlide>
       </Swiper>
     </>
