@@ -114,12 +114,6 @@
   }
 }
 
-.filter-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 0px 10px 0px;
-}
-
 .activity-wrapper {
   margin-top: 100px;
   &.grid {
@@ -134,10 +128,6 @@
   }
 }
 
-.filter-content {
-  position: absolute;
-  left: 0;
-}
 .highlight {
   .details {
     & > div {
@@ -279,15 +269,7 @@
       }
     }
   }
-  .filter-header {
-    justify-content: space-between;
-    span {
-      &:last-child {
-        display: flex;
-        justify-content: end;
-      }
-    }
-  }
+
   .activity-wrapper {
     margin-top: 50px;
   }
