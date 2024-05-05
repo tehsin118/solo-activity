@@ -2,10 +2,30 @@
   border: 1px solid #757574;
   padding: 8px 12px;
   border-radius: 8px;
+  background: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
   input {
     height: 100%;
     width: 100%;
     border: none;
+    outline: none;
+    &::placeholder {
+      color: #7f7f85 !important;
+    }
+  }
+  .ant-picker {
+    border: none !important;
+    padding-left: 0;
+    padding-right: 0;
+    input {
+      font-size: 16px !important;
+      width: 180px;
+      &::placeholder {
+        color: #7f7f85 !important;
+      }
+    }
   }
 }
 .search-box {

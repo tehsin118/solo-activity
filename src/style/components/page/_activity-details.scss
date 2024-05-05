@@ -30,6 +30,7 @@
 }
 
 .activity-details {
+  background: #f1f2f6;
   .details {
     padding: 48px 0;
   }
@@ -170,6 +171,53 @@
         }
       }
     }
+  }
+}
+
+.card-wrapper {
+  padding: 20px;
+  border-radius: 30px;
+  border: 1px solid #000;
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+.scroll-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  color: #7f7f85;
+  background: #e2e3e8;
+  transform: rotate(180deg);
+}
+
+.FcKIT-btn {
+  font-size: 16px;
+  background-color: #ff2d55;
+  color: #fff;
+  // border: 1px solid;
+  padding: 5px 20px;
+  font-weight: 600;
+  border-radius: 50px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  z-index: 99;
+  transition: all 0.3s linear;
+}
+.img-modal {
+  height: 800px !important;
+  .ant-modal-content {
+    background: transparent;
+    box-shadow: none;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 @media screen and (max-width: 767px) {

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Button, Modal } from "antd";
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
@@ -15,6 +16,13 @@ import { Image } from "antd";
 import { EffectCards } from "swiper/modules";
 
 const Slider = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleImageEnlarge = () => {
+    setIsModalOpen(!isModalOpen);
+    document.body.style.overflow = "auto";
+  };
+
   return (
     <>
       <Swiper
@@ -35,21 +43,46 @@ const Slider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <Image src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <Image src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <Image src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <Image src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <Image src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <img
+            src="https://swiperjs.com/demos/images/nature-1.jpg"
+            alt=""
+            onClick={handleImageEnlarge}
+          />
         </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+            alt=""
+            onClick={handleImageEnlarge}
+          />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img
+            src="https://swiperjs.com/demos/images/nature-2.jpg"
+            alt=""
+            onClick={handleImageEnlarge}
+          />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img
+            src="https://swiperjs.com/demos/images/nature-3.jpg"
+            alt=""
+            onClick={handleImageEnlarge}
+          />
+        </SwiperSlide>{" "}
       </Swiper>
+
+      <Modal
+        open={isModalOpen}
+        onOk={handleImageEnlarge}
+        onCancel={handleImageEnlarge}
+        footer={null}
+        width="800px"
+        className="img-modal"
+        centered={true}
+      >
+        <img src="https://swiperjs.com/demos/images/nature-3.jpg" alt="" />
+      </Modal>
     </>
   );
 };
