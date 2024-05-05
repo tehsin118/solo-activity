@@ -12,7 +12,7 @@ const Navbar = () => {
             <h1 className="text-black">Solos</h1>
           </Link>
 
-          <h1 className="text-center h-100 d-flex align-items-end">
+          <h1 className="text-center h-100 d-flex align-items-end explore">
             <span className=" ">Explore</span>
           </h1>
           <div className="v-center">
