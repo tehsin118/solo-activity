@@ -4,6 +4,7 @@ import ActivityCard from "../components/card";
 
 import Filter from "../components/filter";
 import { Icon } from "@iconify/react";
+import { Tooltip } from "antd";
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
@@ -19,11 +20,12 @@ const Home = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array ensures the effect runs only once on mount
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Optional: smooth scrolling behavior
+      behavior: "smooth",
     });
   };
   return (
@@ -53,11 +55,13 @@ const Home = () => {
           onClick={scrollToTop}
         />
 
-        <button
-          className={`FcKIT-btn ${isVisible ? "opacity-1" : "opacity-0"}`}
-        >
-          FcKIT
-        </button>
+        <Tooltip title=" spontaneous suggestion">
+          <button
+            className={`FcKIT-btn ${isVisible ? "opacity-1" : "opacity-0"}`}
+          >
+            FcKIT
+          </button>
+        </Tooltip>
       </div>
     </>
   );

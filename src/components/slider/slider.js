@@ -17,12 +17,13 @@ import { EffectCards } from "swiper/modules";
 
 const Slider = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
 
-  const handleImageEnlarge = () => {
+  const handleImageEnlarge = (img) => {
+    setSelectedImage(img);
     setIsModalOpen(!isModalOpen);
     document.body.style.overflow = "auto";
   };
-
   return (
     <>
       <Swiper
@@ -42,34 +43,15 @@ const Slider = () => {
         modules={[EffectCards, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-            alt=""
-            onClick={handleImageEnlarge}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-            alt=""
-            onClick={handleImageEnlarge}
-          />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-2.jpg"
-            alt=""
-            onClick={handleImageEnlarge}
-          />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-3.jpg"
-            alt=""
-            onClick={handleImageEnlarge}
-          />
-        </SwiperSlide>{" "}
+        {data.map((item, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={item.img}
+              alt=""
+              onClick={() => handleImageEnlarge(item.img)}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
 
       <Modal
@@ -81,10 +63,26 @@ const Slider = () => {
         className="img-modal"
         centered={true}
       >
-        <img src="https://swiperjs.com/demos/images/nature-3.jpg" alt="" />
+        <img src={selectedImage} alt="" />
       </Modal>
     </>
   );
 };
-
+const data = [
+  {
+    img: "https://swiperjs.com/demos/images/nature-1.jpg",
+  },
+  {
+    img: "https://swiperjs.com/demos/images/nature-2.jpg",
+  },
+  {
+    img: "https://swiperjs.com/demos/images/nature-3.jpg",
+  },
+  {
+    img: "https://swiperjs.com/demos/images/nature-4.jpg",
+  },
+  {
+    img: "https://swiperjs.com/demos/images/nature-5.jpg",
+  },
+];
 export default Slider;

@@ -32,7 +32,9 @@
 .activity-details {
   background: #f1f2f6;
   .details {
-    padding: 48px 0;
+    margin: 48px 0;
+    border-radius: 20px !important;
+    overflow: hidden;
   }
   header {
     height: 600px;
@@ -181,7 +183,11 @@
   background-color: white;
   margin-bottom: 30px;
 }
-
+.long-discription {
+  p {
+    border-radius: 20px;
+  }
+}
 .scroll-btn {
   position: fixed;
   right: 30px;
@@ -192,7 +198,11 @@
   background: #e2e3e8;
   transform: rotate(180deg);
 }
-
+.additional-details {
+  background: #fff;
+  padding: 1rem !important;
+  border-radius: 20px;
+}
 .FcKIT-btn {
   font-size: 16px;
   background-color: #ff2d55;
@@ -220,6 +230,19 @@
     object-fit: cover;
   }
 }
+.img-modal::-webkit-scrollbar {
+  display: none !important;
+}
+
+.goto-web-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  color: #7f7f85;
+  background: #e2e3e8;
+}
 @media screen and (max-width: 767px) {
   .nav {
     .container {
@@ -231,7 +254,7 @@
   }
   .activity-details {
     .details {
-      margin-top: 0px;
+      margin-top: 30px;
       padding: 0px 0;
     }
     h1 {

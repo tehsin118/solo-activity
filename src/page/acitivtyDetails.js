@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import thumbnail from "../assets/image/artwork2.png";
 import bannerImg from "../assets/image/banner.jpg";
 import { Icon } from "@iconify/react";
 import { Image } from "antd";
 import Slider from "../components/slider/slider";
+import useScrollToTop from "../hook/useScrollToTop";
 
 const AcitivtyDetails = () => {
+  useScrollToTop();
+
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      setIsVisible(scrollY > 100);
+    };
+
+    // Add scroll event listener when component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove scroll event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div>
       <div className="activity-details">
@@ -39,7 +57,15 @@ const AcitivtyDetails = () => {
                   <span> +934892184</span>
                 </li>
               </ul>
-              <a href="#">Go to Website</a>
+
+              <a
+                href="#"
+                className={`goto-web-btn ${
+                  isVisible ? "opacity-1" : "opacity-0"
+                }`}
+              >
+                Go to Website
+              </a>
 
               <h6 className="text-white">Category: Adventure</h6>
             </div>
@@ -92,8 +118,8 @@ const AcitivtyDetails = () => {
           {/* hightlisghts */}
           <div className="highlight">
             <div className="container ">
-              <div className="row gx-3 gy-3 details">
-                <div className="col-md-4 px-0   col-12 px-0   px-0">
+              <div className="row gx-3   details  ">
+                <div className="col-md-4   col-12  bg-white   p-3">
                   <h5>Highlights</h5>
                   <ul className="d-flex flex-column gap-1 mt-3 ps-3">
                     <li>Official Google experience.</li>
@@ -103,7 +129,7 @@ const AcitivtyDetails = () => {
                     <li>Earn Google Play Points .</li>
                   </ul>
                 </div>
-                <div className="col-md-4 col-12 px-0   px-0">
+                <div className="col-md-4 col-12  bg-white   p-3">
                   <h5>Short Discription</h5>
 
                   <p className="small mt-3">
@@ -120,7 +146,7 @@ const AcitivtyDetails = () => {
                   </p>
                 </div>
 
-                <div className="col-md-4 d-flex justify-content-end px-0    col-12 px-0   px-0">
+                <div className="col-md-4 d-flex justify-content-end bg-white  col-12    p-3  ">
                   <div className="w-75">
                     <h5>Opening Hours</h5>
                     <p className="small mt-3 v-center justify-content-between">
@@ -270,14 +296,11 @@ const AcitivtyDetails = () => {
           </div>
 
           {/* long-discription */}
-          <div
-            className="long-discription py-5 mb-5"
-            style={{ background: "#D3D3D3" }}
-          >
+          <div className="long-discription py-5 mb-5 ">
             <div className="container m-auto  ">
               <div className="row">
                 <div className="col-12 px-0">
-                  <p className="small">
+                  <p className="small bg-white p-3">
                     Take on the role of a key member of Rhodes Island, a
                     pharmaceutical company that fights both a deadly infection
                     and the unrest it leaves in its wake. Together with your
@@ -309,7 +332,7 @@ const AcitivtyDetails = () => {
                 </div>
               </div>
 
-              <div className="col-12 px-0   mt-3  mb-5 pb-5">
+              <div className="col-12 px-0 mt-3 mb-5 pb-5 additional-details">
                 <h5>Additional Details:</h5>
 
                 <div className="mt-4 d-flex flex-column gap-3">
