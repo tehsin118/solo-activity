@@ -68,7 +68,7 @@ const Navbar = () => {
         )}
 
         <div
-          className="w-50 m-auto ps-2"
+          className="w-50 m-auto ps-2 "
           style={{
             height: showMenu ? "100px" : "0px",
             transition: "all 0.5s ease",

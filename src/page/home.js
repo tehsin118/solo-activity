@@ -32,7 +32,7 @@ const Home = () => {
     <>
       <div className="home-page position-relative">
         <div className="container">
-          <Filter />
+          <Filter className="d-none" />
 
           <div className="activity-wrapper row position-relative">
             <div className={`px-0 col-12 `}>

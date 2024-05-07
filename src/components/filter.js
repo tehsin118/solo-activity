@@ -6,7 +6,7 @@ import checked from "../assets/icon/checkbox-selected.svg";
 import uncheck from "../assets/icon/checkbox.svg";
 import drop from "../assets/icon/chevron-down-small.svg";
 
-const Filter = () => {
+const Filter = (props) => {
   const [searchBox, setSearchBox] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [formData, setFormData] = useState({
@@ -66,7 +66,7 @@ const Filter = () => {
 
   return (
     <>
-      <div className="filter-header  hide-on-mobile">
+      <div className={`filter-header  hide-on-mobile ${props.className}`}>
         <Popover content={content} title=" " trigger="click">
           <span className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2">
             <img src={filter} alt="" />
