@@ -329,10 +329,7 @@ const AcitivtyDetails = () => {
           <div className="container">
             <Slider2 />
             <div className="row  m-auto">
-              <div className="col-12 px-0 mb-2 pb-5">
-                <div className="more-imgs"></div>
-              </div>
-
+              <div className="pb-3"></div>
               <div className="col-12 px-0 mt-3 mb-5 pb-5 additional-details">
                 <h5>Additional Details:</h5>
 
