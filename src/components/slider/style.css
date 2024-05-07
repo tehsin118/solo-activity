@@ -69,3 +69,9 @@
     right: 0px !important;
   }
 }
+.control-arrow {
+  opacity: 1 !important;
+}
+.carousel.carousel-slider .control-arrow:hover {
+  background: transparent !important;
+}

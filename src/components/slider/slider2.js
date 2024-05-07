@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Image, Modal, Carousel } from "antd";
-
+import { Image, Modal } from "antd";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 const Slider2 = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(1);
+  const [selectedImage, setSelectedImage] = useState();
 
-  const handleImageEnlarge = (id) => {
-    setSelectedImage(id);
+  const handleImageEnlarge = (img) => {
+    setSelectedImage(img);
     setIsModalOpen(!isModalOpen);
     document.body.style.overflow = "auto";
   };
@@ -69,7 +70,8 @@ const Slider2 = () => {
             alt=""
             className="m-auto pointer"
             key={index}
-            onClick={() => handleImageEnlarge(item.id)}
+            // onClick={() => handleImageEnlarge(item.img)}
+            onClick={() => handleImageEnlarge(index)}
           />
         ))}
       </Slider>
@@ -83,19 +85,22 @@ const Slider2 = () => {
         className="img-modal"
         centered={true}
       >
-        <Carousel afterChange={onChange}>
-          <div>
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
+        <Carousel
+          selectedItem={selectedImage}
+          showStatus={false}
+          showThumbs={false}
+          showIndicators={false}
+        >
+          {data.map((item, index) => (
+            <div>
+              <img
+                src={item.img}
+                alt=""
+                className="m-auto pointer"
+                key={index}
+              />
+            </div>
+          ))}
         </Carousel>
       </Modal>
     </>
@@ -103,24 +108,20 @@ const Slider2 = () => {
 };
 const data = [
   {
-    id: 1,
     img: "https://swiperjs.com/demos/images/nature-1.jpg",
   },
   {
-    id: 2,
     img: "https://swiperjs.com/demos/images/nature-2.jpg",
   },
   {
-    id: 3,
     img: "https://swiperjs.com/demos/images/nature-3.jpg",
   },
   {
-    id: 4,
     img: "https://swiperjs.com/demos/images/nature-4.jpg",
   },
   {
-    id: 5,
     img: "https://swiperjs.com/demos/images/nature-5.jpg",
   },
 ];
+
 export default Slider2;
