@@ -3,6 +3,11 @@
   justify-content: space-between;
   padding: 20px 0px 10px 0px;
 }
+.search-box {
+  &:focus-within {
+    width: 250px !important;
+  }
+}
 @media screen and (max-width: 767px) {
   .filter-header {
     justify-content: space-between;

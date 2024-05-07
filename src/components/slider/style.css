@@ -23,9 +23,49 @@
   color: #fff;
 }
 
+.slick-slide > div {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-slide img {
+  width: 300px !important;
+  height: 300px !important;
+}
+
+.slick-prev,
+.slick-next {
+  width: 60px !important;
+  height: 60px !important;
+  /* background-color: red !important; */
+  z-index: 99;
+  background: url("../../assets/icon/arrow-slider.svg") !important;
+  background-size: cover !important;
+  background-color: #fff !important;
+  border-radius: 100%;
+  padding: 0 !important;
+}
+.slick-prev {
+  transform: translate(0, -50%) rotate(180deg) !important;
+}
+.slick-prev::before,
+.slick-next::before {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
   .swiper {
     width: 300px;
     height: 400px;
+  }
+  .slick-slide img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .slick-prev {
+    left: 0px !important;
+  }
+  .slick-next {
+    right: 0px !important;
   }
 }

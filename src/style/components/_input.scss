@@ -1,16 +1,32 @@
+.filter-content {
+  label {
+    color: #7f7f85;
+    img {
+      opacity: 0.3;
+    }
+  }
+}
 .input-box {
   border: 1px solid #757574;
   padding: 8px 12px;
   border-radius: 8px;
-  background: white;
+  // background: white;
+  background: #e2e3e8;
   height: 40px;
   display: flex;
   align-items: center;
+  color: #7f7f85;
+  font-weight: normal;
+  span {
+    color: #7f7f85;
+  }
   input {
     height: 100%;
     width: 100%;
     border: none;
     outline: none;
+    color: #7f7f85;
+    background: transparent !important;
     &::placeholder {
       color: #7f7f85 !important;
     }
@@ -19,13 +35,26 @@
     border: none !important;
     padding-left: 0;
     padding-right: 0;
+    background: transparent !important;
     input {
       font-size: 16px !important;
+      background: transparent !important;
       width: 180px;
+      color: #e2e3e8;
       &::placeholder {
         color: #7f7f85 !important;
       }
     }
+  }
+
+  button {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    color: #7f7f85;
+    align-items: center;
   }
 }
 .search-box {

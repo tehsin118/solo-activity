@@ -169,7 +169,6 @@
 .card-wrapper {
   padding: 20px;
   border-radius: 30px;
-  border: 1px solid #000;
   background-color: white;
   margin-bottom: 30px;
 }
@@ -187,6 +186,7 @@
   color: #7f7f85;
   background: #e2e3e8;
   transform: rotate(180deg);
+  border-radius: 100%;
 }
 .additional-details {
   background: #fff;
@@ -233,6 +233,18 @@
   color: #7f7f85;
   background: #e2e3e8;
 }
+
+.mobile-filter {
+  &.hide-menu {
+    height: 0;
+    transition: all 0.3s linear;
+    .input-box {
+      padding: 0;
+      border: 0;
+    }
+  }
+}
+
 @media screen and (max-width: 767px) {
   .nav {
     .container {
@@ -278,6 +290,7 @@
   }
   .long-discription {
     margin-top: 30px;
+    padding-bottom: 0 !important;
   }
 
   .highlight {

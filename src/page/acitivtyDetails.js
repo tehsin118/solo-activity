@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import { Image } from "antd";
 import Slider from "../components/slider/slider";
 import useScrollToTop from "../hook/useScrollToTop";
+import Slider2 from "../components/slider/slider2";
 
 const AcitivtyDetails = () => {
   useScrollToTop();
@@ -13,7 +14,7 @@ const AcitivtyDetails = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
-      setIsVisible(scrollY > 100);
+      setIsVisible(scrollY > 600);
     };
 
     // Add scroll event listener when component mounts
@@ -66,6 +67,7 @@ const AcitivtyDetails = () => {
               >
                 Go to Website
               </a>
+              <a href="#">Go to Website</a>
 
               <h6 className="text-white">Category: Adventure</h6>
             </div>
@@ -325,11 +327,10 @@ const AcitivtyDetails = () => {
 
           {/* cards images */}
           <div className="container">
+            <Slider2 />
             <div className="row  m-auto">
               <div className="col-12 px-0 mb-2 pb-5">
-                <div className="more-imgs">
-                  <Slider />
-                </div>
+                <div className="more-imgs"></div>
               </div>
 
               <div className="col-12 px-0 mt-3 mb-5 pb-5 additional-details">

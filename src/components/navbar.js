@@ -11,10 +11,10 @@ const Navbar = () => {
             <img src={logo} alt="" className="logo" />
             <h1 className="text-black">Solos</h1>
           </Link>
-
+          {/* 
           <h1 className="text-center h-100 d-flex align-items-end explore">
             <span className=" ">Explore</span>
-          </h1>
+          </h1> */}
           <div className="v-center">
             <div className="logged">
               <img src={user} alt="" />

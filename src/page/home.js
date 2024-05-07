@@ -51,7 +51,7 @@ const Home = () => {
           icon="emojione-monotone:down-arrow"
           width="32"
           height="32"
-          className={`scroll-btn rounded-cricle ${
+          className={`scroll-btn rounded-circle ${
             isVisible ? "opacity-1" : "opacity-0"
           }`}
           onClick={scrollToTop}

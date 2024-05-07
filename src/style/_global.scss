@@ -3,7 +3,8 @@
 }
 body {
   font-family: "Poppins", sans-serif;
-  background: #e2e3e8;
+  // background: #e2e3e8;
+  background: #f1f2f6;
 }
 html {
   scroll-behavior: smooth;
@@ -40,12 +41,29 @@ input {
   display: flex;
   align-items: center;
 }
-
+.hide-on-desktop {
+  display: none !important;
+}
 @media screen and (max-width: 767px) {
   .hide-on-mobile {
-    display: none;
+    display: none !important;
+  }
+  .hide-on-desktop {
+    display: flex !important;
   }
 }
+
 .more-imgs {
   overflow: hidden;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
 }

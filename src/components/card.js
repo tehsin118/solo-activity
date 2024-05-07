@@ -8,11 +8,10 @@ const ActivityCard = (data) => {
   return (
     <>
       <div className="activity-card ">
-        <div className="card-body w-100 h-100">
-          <img src={img} alt="" className="img-fluids" />
-        </div>
-        <div className="footer pt-2 ">
-          <div className="v-center justify-content-between">
+        <img src={img} alt="" className="img-fluids" />
+
+        <div className="footer flex-column pt-2 w-100">
+          <div className="v-center w-100 justify-content-between">
             <h3>Card Head</h3>
             <a onClick={() => navigate("/activity-details")}>Read More</a>
           </div>
