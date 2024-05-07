@@ -9,7 +9,7 @@ const Slider2 = () => {
   const [selectedImage, setSelectedImage] = useState(1);
 
   const handleImageEnlarge = (id) => {
-    setSelectedImage();
+    setSelectedImage(id);
     setIsModalOpen(!isModalOpen);
     document.body.style.overflow = "auto";
   };
