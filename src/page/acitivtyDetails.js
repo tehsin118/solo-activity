@@ -298,7 +298,7 @@ const AcitivtyDetails = () => {
           </div>
 
           {/* long-discription */}
-          <div className="long-discription py-5 mb-5 ">
+          <div className="long-discription  mb-5 ">
             <div className="container m-auto  ">
               <div className="row">
                 <div className="col-12 px-0">

@@ -66,7 +66,7 @@ const Filter = () => {
 
   return (
     <>
-      <div className="filter-header border-bottom border-dark-subtle hide-on-mobile">
+      <div className="filter-header     hide-on-mobile">
         <Popover content={content} title=" " trigger="click">
           <span className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2">
             <img src={filter} alt="" />
@@ -96,7 +96,7 @@ const Filter = () => {
         </span>
       </div>
 
-      <div className="hide-on-desktop pb-1 filter-header   border-bottom border-dark-subtle gap-0">
+      <div className="hide-on-desktop pb-1 filter-header gap-0">
         {/* search */}
         <span onClick={() => setSearchBox(!searchBox)}>
           <div

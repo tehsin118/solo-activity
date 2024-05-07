@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <nav className="nav border-bottom border-dark-subtle pt-2">
+      <nav className="nav   pt-2">
         <div className="container v-center justify-content-between">
           <Link to="/" className="v-center">
             <img src={logo} alt="" className="logo" />
