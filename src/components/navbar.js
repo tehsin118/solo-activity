@@ -42,7 +42,7 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className="v-center h-center w-100 d-none"
+          className="v-center h-center w-100 hide-on-mobile"
           style={{ paddingLeft: "120px" }}
         >
           <button
@@ -54,7 +54,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* <div
+        <div
           className="w-50 m-auto ps-2"
           style={{
             height: showMenu ? "100px" : "0px",
@@ -63,7 +63,7 @@ const Navbar = () => {
           }}
         >
           <Filter />
-        </div> */}
+        </div>
       </nav>
     </div>
   );
