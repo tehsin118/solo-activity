@@ -7,7 +7,7 @@ import Filter from "./filter";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [optionBtn, setOptionBtn] = useState(false);
+  const [optionBtn, setOptionBtn] = useState(true);
 
   const location = useLocation();
 
