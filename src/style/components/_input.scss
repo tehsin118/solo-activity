@@ -49,12 +49,12 @@
   }
 
   button {
-    background: transparent;
+    background: transparent !important;
     box-shadow: none;
     border: none;
     display: flex;
     justify-content: space-between;
-    color: #7f7f85;
+    color: #7f7f85 !important;
     align-items: center;
   }
 }

@@ -82,7 +82,7 @@ const Filter = () => {
           <DatePicker onChange={onChange} showTime needConfirm={false} />
         </div>
 
-        <span onClick={() => setSearchBox(!searchBox)}>
+        {/* <span onClick={() => setSearchBox(!searchBox)}>
           <div
             className="input-box d-flex align-items-center  pointer  search-box activ e"
             style={{
@@ -93,7 +93,7 @@ const Filter = () => {
             <input type="text" name="searchBox" placeholder="Search here..." />
             <img src={search} alt="" />
           </div>
-        </span>
+        </span> */}
       </div>
 
       <div className="hide-on-desktop pb-1 filter-header gap-0">
