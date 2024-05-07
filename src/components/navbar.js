@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import user from "../assets/icon/user.png";
 import logo from "../assets/image/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import search from "../assets/icon/search-grey.svg";
 import Filter from "./filter";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [optionBtn, setOptionBtn] = useState(false);
 
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/activity-details") {
+      setOptionBtn(false);
+    } else {
+      setOptionBtn(true);
+    }
+  }, [location]);
+  console.log(optionBtn);
   return (
     <div>
       <nav className="nav   pt-2 container ">
@@ -41,18 +52,20 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div
-          className="v-center h-center w-100 hide-on-mobile"
-          style={{ paddingLeft: "120px" }}
-        >
-          <button
-            className="m-auto bg-grey text-grey "
-            style={{ width: "250px" }}
-            onClick={() => setShowMenu(!showMenu)}
+        {optionBtn && (
+          <div
+            className="v-center h-center w-100 hide-on-mobile"
+            style={{ paddingLeft: "120px" }}
           >
-            options
-          </button>
-        </div>
+            <button
+              className="m-auto bg-grey text-grey "
+              style={{ width: "250px" }}
+              onClick={() => setShowMenu(!showMenu)}
+            >
+              options
+            </button>
+          </div>
+        )}
 
         <div
           className="w-50 m-auto ps-2"
