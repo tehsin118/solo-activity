@@ -51,10 +51,11 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
         {optionBtn && (
           <div
             className="v-center h-center w-100 hide-on-mobile"
-            style={{ paddingLeft: "120px" }}
+            style={{ paddingLeft: "40px" }}
           >
             <button
               className="m-auto bg-grey text-grey "
