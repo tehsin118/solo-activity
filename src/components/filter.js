@@ -70,7 +70,7 @@ const Filter = (props) => {
       <div className={`filter-header  hide-on-mobile ${props.className}`}>
         <Popover content={content} title=" " trigger="click">
           <span className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2">
-            <img src={filter} alt="" />
+            <img src={filter} alt="" className="opacity-30" />
             <span className="d-md-block d-none">Show</span>
             Filter
           </span>
@@ -116,10 +116,10 @@ const Filter = (props) => {
 
         {/* option-btn */}
         <div
-          className="input-box  rounded-pill br-30 mt-3"
+          className="input-box bg-transparent rounded-pill br-30 mt-3"
           onClick={() => setShowMenu(!showMenu)}
         >
-          <button className="  w-100">
+          <span className=" opt-btn-mb v-center justify-content-center w-100">
             Options
             <img
               onClick={() => setShowMenu(!showMenu)}
@@ -131,7 +131,7 @@ const Filter = (props) => {
                 opacity: "0.3",
               }}
             />
-          </button>
+          </span>
         </div>
 
         <div
@@ -162,7 +162,7 @@ const Filter = (props) => {
             trigger="click"
           >
             <span className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2">
-              <img src={filter} alt="" />
+              <img src={filter} alt="" className="opacity-30" />
               <span className="d-md-block d-none">Show</span>
               Filter
             </span>
