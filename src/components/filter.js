@@ -66,6 +66,7 @@ const Filter = (props) => {
 
   return (
     <>
+      {/* for desktop */}
       <div className={`filter-header  hide-on-mobile ${props.className}`}>
         <Popover content={content} title=" " trigger="click">
           <span className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2">
@@ -96,6 +97,7 @@ const Filter = (props) => {
         </span> */}
       </div>
 
+      {/* for mobile */}
       <div className="hide-on-desktop pb-1 filter-header gap-0">
         {/* search */}
         <span onClick={() => setSearchBox(!searchBox)}>

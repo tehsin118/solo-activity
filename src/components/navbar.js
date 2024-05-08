@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import user from "../assets/icon/user.png";
+import arrowRight from "../assets/icon/chevron-right-small.svg";
 import logo from "../assets/image/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import search from "../assets/icon/search-grey.svg";
@@ -28,7 +29,7 @@ const Navbar = () => {
             <h1 className="text-black">Solos</h1>
           </Link>
 
-          <div className="filter-header hide-on-mobile">
+          <div className="filter-header   hide-on-mobile">
             <div
               className="input-box d-flex align-items-center   pointer  search-box active"
               style={{
@@ -54,28 +55,28 @@ const Navbar = () => {
 
         {optionBtn && (
           <div
-            className="v-center h-center w-100 hide-on-mobile"
+            className="v-center h-center w-100   hide-on-mobile opt-btn"
             style={{ paddingLeft: "40px" }}
           >
-            <button
-              className="m-auto bg-grey text-grey "
-              style={{ width: "250px" }}
+            <span
+              className="m-auto  text-center text-grey v-center gap-2"
               onClick={() => setShowMenu(!showMenu)}
             >
               options
-            </button>
+              <img src={arrowRight} alt="" className="" />
+            </span>
           </div>
         )}
 
         <div
-          className="w-100 m-0 m-auto ps-2 "
+          className="w-75 m-0 m-auto ps-2 "
           style={{
             height: showMenu ? "100px" : "0px",
             transition: "all 0.5s ease",
             overflow: "hidden",
           }}
         >
-          <Filter />
+          <Filter className="me-0" />
         </div>
       </nav>
     </div>

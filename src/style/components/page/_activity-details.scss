@@ -328,8 +328,13 @@
   .ant-modal {
     top: 25% !important;
   }
-  .opt-btn {
-    padding-left: 0 !important;
-    margin-bottom: 20px;
+}
+.opt-btn {
+  margin-bottom: 20px;
+  span {
+    cursor: pointer;
+  }
+  img {
+    width: 18px;
   }
 }
