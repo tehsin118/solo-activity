@@ -31,10 +31,9 @@ const Navbar = () => {
           <div className="filter-header hide-on-mobile">
             <div
               className="input-box d-flex align-items-center   pointer  search-box active"
-              // style={{
-              //   width: searchBox ? "250px" : "50px",
-              //   transition: "width 0.5s ease",
-              // }}
+              style={{
+                width: "255px",
+              }}
             >
               <input
                 type="text"
