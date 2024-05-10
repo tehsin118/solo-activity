@@ -23,38 +23,38 @@ const Filter = (props) => {
   };
   const content = (
     <>
-      <div className="d-flex flex-column gap-1 filter-content">
-        <label className=" fw-medium v-center gap-2  text-capitalize pointer">
-          <img src={formData.category1 ? checked : uncheck} alt="" />
+      <div className='d-flex flex-column gap-1 filter-content'>
+        <label className=' fw-medium v-center gap-2  text-capitalize pointer'>
+          <img src={formData.category1 ? checked : uncheck} alt='' />
           category 1
           <input
-            type="checkbox"
-            name="category1"
+            type='checkbox'
+            name='category1'
             checked={formData.category1}
             onChange={handleChange}
-            className="d-none"
+            className='d-none'
           />
         </label>
-        <label className=" fw-medium v-center gap-2 text-capitalize pointer">
-          <img src={formData.category2 ? checked : uncheck} alt="" />
+        <label className=' fw-medium v-center gap-2 text-capitalize pointer'>
+          <img src={formData.category2 ? checked : uncheck} alt='' />
           category 2
           <input
-            type="checkbox"
-            name="category2"
+            type='checkbox'
+            name='category2'
             checked={formData.category2}
             onChange={handleChange}
-            className="d-none"
+            className='d-none'
           />
         </label>
-        <label className=" fw-medium v-center gap-2 text-capitalize pointer">
-          <img src={formData.category3 ? checked : uncheck} alt="" />
+        <label className=' fw-medium v-center gap-2 text-capitalize pointer'>
+          <img src={formData.category3 ? checked : uncheck} alt='' />
           category 3
           <input
-            type="checkbox"
-            name="category3"
+            type='checkbox'
+            name='category3'
             checked={formData.category3}
             onChange={handleChange}
-            className="d-none"
+            className='d-none'
           />
         </label>
       </div>
@@ -68,18 +68,18 @@ const Filter = (props) => {
     <>
       {/* for desktop */}
       <div className={`filter-header  hide-on-mobile ${props.className}`}>
-        <Popover content={content} title=" " trigger="click">
-          <span className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2">
-            <img src={filter} alt="" className="opacity-30" />
-            <span className="d-md-block d-none">Show</span>
+        <Popover content={content} title=' ' trigger='click'>
+          <span className='d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2'>
+            <img src={filter} alt='' className='opacity-30' />
+            <span className='d-md-block d-none'>Show</span>
             Filter
           </span>
         </Popover>
 
-        <div className="input-box  rounded-pill br-30">
-          <input type="text" placeholder="Linz" />
+        <div className='input-box  rounded-pill br-30'>
+          <input type='text' placeholder='Linz' />
         </div>
-        <div className="input-box rounded-pill">
+        <div className='input-box rounded-pill'>
           <DatePicker onChange={onChange} showTime needConfirm={false} />
         </div>
 
@@ -98,33 +98,33 @@ const Filter = (props) => {
       </div>
 
       {/* for mobile */}
-      <div className="hide-on-desktop pb-1 filter-header gap-0">
+      <div className='hide-on-desktop pb-1 filter-header gap-0'>
         {/* search */}
         <span onClick={() => setSearchBox(!searchBox)}>
           <div
-            className="input-box d-flex align-items-center   pointer  search-box activ e"
+            className='input-box d-flex align-items-center   pointer  search-box activ e'
             style={{
               width: searchBox ? "250px" : "50px",
               transition: "width 0.5s ease",
             }}
           >
-            <input type="text" name="searchBox" placeholder="Search here..." />
+            <input type='text' name='searchBox' placeholder='Search here...' />
 
-            <img src={search} alt="" />
+            <img src={search} alt='' />
           </div>
         </span>
 
         {/* option-btn */}
         <div
-          className="input-box bg-transparent rounded-pill br-30 mt-3"
+          className='input-box bg-transparent rounded-pill br-30 mt-3'
           onClick={() => setShowMenu(!showMenu)}
         >
-          <span className=" opt-btn-mb v-center justify-content-center w-100">
+          <span className=' opt-btn-mb v-center justify-content-center w-100'>
             Options
             <img
               onClick={() => setShowMenu(!showMenu)}
               src={drop}
-              alt=""
+              alt=''
               style={{
                 transform: showMenu ? "rotate(180deg)" : "rotate(0deg)",
                 transition: "all 0.3s ease",
@@ -145,25 +145,25 @@ const Filter = (props) => {
           }}
         >
           {/* location */}
-          <div className="input-box  rounded-pill br-30 ">
-            <input type="text" placeholder="Linz" />
+          <div className='input-box  rounded-pill br-30 '>
+            <input type='text' placeholder='Linz' />
           </div>
 
           {/* date-picker */}
-          <div className="input-box rounded-pill">
+          <div className='input-box rounded-pill'>
             <DatePicker onChange={onChange} showTime needConfirm={false} />
           </div>
 
           {/* popup */}
           <Popover
             content={content}
-            placement="bottom"
-            title=" "
-            trigger="click"
+            placement='bottom'
+            title=' '
+            trigger='click'
           >
-            <span className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2">
-              <img src={filter} alt="" className="opacity-30" />
-              <span className="d-md-block d-none">Show</span>
+            <span className='d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2'>
+              <img src={filter} alt='' className='opacity-30' />
+              <span className='d-md-block d-none'>Show</span>
               Filter
             </span>
           </Popover>

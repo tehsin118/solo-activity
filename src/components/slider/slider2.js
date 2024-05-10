@@ -67,8 +67,8 @@ const Slider2 = () => {
         {data.map((item, index) => (
           <img
             src={item.img}
-            alt=""
-            className="m-auto pointer"
+            alt=''
+            className='m-auto pointer'
             key={index}
             // onClick={() => handleImageEnlarge(item.img)}
             onClick={() => handleImageEnlarge(index)}
@@ -81,8 +81,8 @@ const Slider2 = () => {
         onOk={handleImageEnlarge}
         onCancel={handleImageEnlarge}
         footer={null}
-        width="800px"
-        className="img-modal"
+        width='800px'
+        className='img-modal'
         centered={true}
       >
         <Carousel
@@ -95,8 +95,8 @@ const Slider2 = () => {
             <div>
               <img
                 src={item.img}
-                alt=""
-                className="m-auto pointer"
+                alt=''
+                className='m-auto pointer'
                 key={index}
               />
             </div>
