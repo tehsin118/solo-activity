@@ -109,16 +109,29 @@ const Filter = (props) => {
             Show Filter
           </span>
         </Popover> */}
-          <div>
+          <div className="d-flex gap-2">
             <span
               className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2"
               onClick={showModal}
+              style={{ width: "fit-content" }}
             >
               <img src={filter} alt="" className="opacity-30" />
               Show Filter
             </span>
+
+            <p
+              className={`small d-flex align-items-center pointer text-underline 
+              ${
+                selectedTags.length > 0
+                  ? "visible opacity-1"
+                  : "opacity-0 invisible"
+              }`}
+              onClick={() => setSelectedTags([])}
+            >
+              <u>Clear All</u>
+            </p>
           </div>
-          <div className="input-box  rounded-pill br-30 ms-5">
+          <div className="input-box  rounded-pill br-30  ms-5">
             <input type="text" placeholder="Linz" />
           </div>
           <div className="input-box rounded-pill">
@@ -219,39 +232,23 @@ const Filter = (props) => {
               <img src={filter} alt="" className="opacity-30" />
               Show Filter
             </div>
+            <p
+              className={`small d-flex align-items-center pointer text-underline 
+              ${
+                selectedTags.length > 0
+                  ? "visible opacity-1"
+                  : "opacity-0 invisible"
+              }`}
+              onClick={() => setSelectedTags([])}
+            >
+              <u>Clear All</u>
+            </p>
           </div>
         </div>
 
-        <Modal
-          open={isModalOpen}
-          onOk={handleOk}
-          onCancel={handleCancel}
-          centered={true}
-          footer={null}
-        >
-          <div className="pt-3 d-flex flex-wrap gap-3">
-            <Checkbox
-              values={initialTags}
-              selectedTags={selectedTags}
-              onChange={toggleTag}
-            />
-          </div>
-          {/* <button
-            className="bg-black text-white px-3 py-2 rounded mt-3"
-            onClick={() => setSelectedTags([])}
-          >
-            Clear All
-          </button> */}
-        </Modal>
         <div>
           {selectedTags.length > 0 && (
             <ul className="selected-chips ms-5">
-              <p
-                className="small d-flex align-items-center w-100 pointer  "
-                onClick={() => setSelectedTags([])}
-              >
-                Clear All
-              </p>
               {selectedTags.map((item, index) => (
                 <li className="chips pointer" key={index}>
                   {item}
@@ -268,6 +265,22 @@ const Filter = (props) => {
           )}
         </div>
       </div>
+
+      <Modal
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        centered={true}
+        footer={null}
+      >
+        <div className="pt-3 d-flex flex-wrap gap-3">
+          <Checkbox
+            values={initialTags}
+            selectedTags={selectedTags}
+            onChange={toggleTag}
+          />
+        </div>
+      </Modal>
     </>
   );
 };
