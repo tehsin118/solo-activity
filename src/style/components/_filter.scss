@@ -72,3 +72,21 @@
     }
   }
 }
+.accordion {
+  width: 100% !important;
+  .accordion-body {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .accordion-header {
+    button {
+      padding: 0;
+      box-shadow: none;
+      background: transparent !important;
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

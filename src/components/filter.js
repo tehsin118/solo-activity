@@ -8,6 +8,7 @@ import drop from "../assets/icon/chevron-down-small.svg";
 import { Button, Modal } from "antd";
 import Checkbox from "./checkbox";
 import { Icon } from "@iconify/react";
+import { Accordion, AccordionBody } from "react-bootstrap";
 
 const Filter = (props) => {
   const [searchBox, setSearchBox] = useState(false);
@@ -63,6 +64,7 @@ const Filter = (props) => {
       </div>
     </>
   );
+
   const onChange = (date, dateString) => {
     console.log(date, dateString);
   };
@@ -173,32 +175,75 @@ const Filter = (props) => {
             </div>
           </span>
 
-          {/* option-btn */}
-          <div
-            className="input-box bg-transparent rounded-pill br-30 mt-3"
-            onClick={() => setShowMenu(!showMenu)}
+          <Accordion defaultActiveKey="0">
+            <Accordion.Header>
+              <div className="input-box bg-transparent rounded-pill br-30 mt-3">
+                <span className=" opt-btn-mb v-center justify-content-center w-100">
+                  Options
+                  <img
+                    src={drop}
+                    alt=""
+                    style={{
+                      transform: showMenu ? "rotate(180deg)" : "rotate(0deg)",
+                      transition: "all 0.3s ease",
+                      opacity: "0.3",
+                    }}
+                  />
+                </span>
+              </div>
+            </Accordion.Header>
+            <Accordion.Body>
+              <div className={`mobile-filter d-flex flex-column gap-3 mt-3  `}>
+                {/* location */}
+                <div className="input-box  rounded-pill br-30 ">
+                  <input type="text" placeholder="Linz" />
+                </div>
+
+                {/* date-picker */}
+                <div className="input-box rounded-pill">
+                  <DatePicker
+                    onChange={onChange}
+                    showTime
+                    needConfirm={false}
+                  />
+                </div>
+
+                {/* popup */}
+                {/* <Popover
+            content={content}
+            placement="bottom"
+            title=" "
+            trigger="click"
           >
-            <span className=" opt-btn-mb v-center justify-content-center w-100">
-              Options
-              <img
-                onClick={() => setShowMenu(!showMenu)}
-                src={drop}
-                alt=""
-                style={{
-                  transform: showMenu ? "rotate(180deg)" : "rotate(0deg)",
-                  transition: "all 0.3s ease",
-                  opacity: "0.3",
-                }}
-              />
+            <span className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2">
+              <img src={filter} alt="" className="opacity-30" />
+              Show Filter
             </span>
-          </div>
+          </Popover> */}
+                <div
+                  className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2"
+                  onClick={showModal}
+                >
+                  <img src={filter} alt="" className="opacity-30" />
+                  Show Filter
+                </div>
+                <p
+                  className={`small d-flex align-items-center pointer text-underline 
+              ${selectedTags.length > 0 ? "d-flex" : "d-none"}`}
+                  onClick={() => setSelectedTags([])}
+                >
+                  <u>Clear All</u>
+                </p>
+              </div>
+            </Accordion.Body>
+          </Accordion>
 
           <div
             className={`mobile-filter d-flex flex-column gap-3 mt-3 ${
               showMenu ? "show-menu" : "hide-menu"
             }`}
             style={{
-              height: showMenu ? "auto" : " 0px",
+              minHeight: showMenu ? "120px" : " 0px",
               overflow: "hidden",
               transition: "all 0.3s ease", // Optional: add smooth transition
             }}

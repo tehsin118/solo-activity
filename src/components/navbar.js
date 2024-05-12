@@ -5,6 +5,7 @@ import logo from "../assets/image/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import search from "../assets/icon/search-grey.svg";
 import Filter from "./filter";
+import Accordion from "react-bootstrap/Accordion";
 
 const Navbar = ({ onSearch }) => {
   // Pass onSearch function as prop
@@ -61,33 +62,31 @@ const Navbar = ({ onSearch }) => {
           </div>
         </div>
 
-        {optionBtn && (
-          <div
-            className="v-center h-center w-100   hide-on-mobile opt-btn"
-            style={{ paddingLeft: "40px" }}
-          >
-            <span
-              className="m-auto  text-center text-grey v-center gap-2"
-              onClick={() => setShowMenu(!showMenu)}
-            >
-              options
-              <img src={arrowRight} alt="" className="" />
-            </span>
-          </div>
-        )}
-
-        <div
-          className="  hide-on-mobile w-100"
-          style={{
-            height: showMenu ? "auto" : "0px",
-            transition: "all 0.5s ease",
-            overflow: "hidden",
-          }}
-        >
-          <Filter className=" gap-3 me-0 ms-5" />
-        </div>
+        <Accordion defaultActiveKey="0">
+          <Accordion.Header>
+            {optionBtn && (
+              <div
+                className="v-center h-center w-100   hide-on-mobile opt-btn mb-0"
+                style={{ paddingLeft: "40px" }}
+              >
+                <span
+                  className="m-auto  text-center text-grey v-center gap-2"
+                  onClick={() => setShowMenu(!showMenu)}
+                >
+                  options
+                  <img src={arrowRight} alt="" className="" />
+                </span>
+              </div>
+            )}
+          </Accordion.Header>
+          <Accordion.Body>
+            <Filter className=" gap-3 me-0 ms-5" />
+          </Accordion.Body>
+        </Accordion>
       </nav>
-      <div className="container">
+
+      {/* for mobile */}
+      <div className="container  ">
         {/* class d-none used to hide mobile filter on desktop */}
         <Filter className="d-none" />
       </div>

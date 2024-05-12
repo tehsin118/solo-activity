@@ -69,14 +69,14 @@ const Home = () => {
       <div className="home-page position-relative">
         <div className="container">
           <div className="activity-wrapper row position-relative">
-            <div className={`px-0 col-12 `}>
+            <div className={`  col-12 card-wrapper`}>
               <InfiniteScroll
                 dataLength={filteredlistings.length}
                 next={fetchData}
                 hasMore={filteredlistings.length < dummyActivities.length}
-                loader={<p>Loading...</p>}
+                loader={<Loader />}
               >
-                <div className="row g-3 card-wrapper">
+                <div className="row g-3 ">
                   {Array.isArray(filteredlistings) &&
                   dummyActivities.length > 0 ? (
                     filteredlistings.map((listing, index) => (
