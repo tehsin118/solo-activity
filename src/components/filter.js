@@ -212,14 +212,13 @@ const Filter = (props) => {
               Show Filter
             </span>
           </Popover> */}
-
-            <span
+            <div
               className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2"
               onClick={showModal}
             >
               <img src={filter} alt="" className="opacity-30" />
               Show Filter
-            </span>
+            </div>
           </div>
         </div>
 

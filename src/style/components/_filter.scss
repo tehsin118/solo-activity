@@ -61,5 +61,13 @@
 
   .selected-chips {
     margin-left: 0 !important;
+    margin-bottom: 20px;
+  }
+  .mobile-filter {
+    & > div {
+      &:last-child {
+        margin-bottom: 20px;
+      }
+    }
   }
 }
