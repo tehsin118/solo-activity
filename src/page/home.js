@@ -7,16 +7,13 @@ import dummyActivities from "./dummydata";
 import Navbar from "../components/navbar"; // Import Navbar component
 import { useNavigate } from "react-router-dom";
 import Loader from "../components/loader";
-//import { searchListings } from "./api"; // Import the API function for searching listings
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [listings, setListings] = useState([]);
   const [filteredlistings, setFilteredlistings] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [offset, setOffset] = useState(0);
 
-  const limit = 80; // limit to show activities
+  const limit = 15;
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
@@ -31,15 +28,14 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    setListings(dummyActivities);
     setFilteredlistings(dummyActivities); // Initialize filtered listings with all listings
   }, []);
 
   const handleSearch = (keyword) => {
-    const filteredListings = listings.filter((activity) =>
+    const filteredListings = dummyActivities.filter((activity) =>
       activity.title.toLowerCase().includes(keyword.toLowerCase())
     );
-    setFilteredlistings(filteredListings); // Update filtered listings based on search keyword
+    setFilteredlistings(filteredListings.slice(0, limit));
   };
 
   const scrollToTop = () => {
@@ -49,50 +45,34 @@ const Home = () => {
     });
   };
 
-  // Function to handle search action with API
-  /*const handleSearch = async (keyword) => {
-    try {
-      const results = await searchListings(keyword); // Call the searchListings API function with the keyword
-      setListings(results); // Update the listings state with the search results
-    } catch (error) {
-      console.error("Error searching listings:", error);
-    }
-  };
-*/
-
   useEffect(() => {
-    const fetchActivities = () => {
-      setIsLoading(true);
-
-      setTimeout(() => {
-        const newActivities = dummyActivities.slice(offset, offset + limit);
-        setListings((prevActivities) => [...prevActivities, ...newActivities]);
-        setOffset((prevOffset) => prevOffset + limit);
-        setIsLoading(false);
-      }, 1000);
-    };
-
-    // Add event listener for scrolling
     const handleScroll = () => {
-      if (
-        window.innerHeight + document.documentElement.scrollTop ===
-        document.documentElement.offsetHeight
-      ) {
-        fetchActivities();
-      }
-      if (listings.length === dummyActivities.length) {
-        // If all data is fetched, remove scroll event listener
-        setIsLoading(false);
-        window.removeEventListener("scroll", handleScroll);
-      }
+      const scrollY = window.scrollY || window.pageYOffset;
+      setIsVisible(scrollY > 100);
     };
 
-    if (listings.length !== dummyActivities.length) {
-      window.addEventListener("scroll", handleScroll);
-    }
+    window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [offset]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  useEffect(() => {
+    setFilteredlistings(dummyActivities.slice(0, limit));
+  }, []);
+  const fetchData = () => {
+    // Simulating fetching data from API
+    setTimeout(() => {
+      setFilteredlistings([
+        ...filteredlistings,
+        ...dummyActivities.slice(
+          filteredlistings.length,
+          filteredlistings.length + limit
+        ),
+      ]);
+    }, 1000); // Simulating delay
+  };
+
   return (
     <>
       <Navbar onSearch={handleSearch} />
@@ -100,21 +80,28 @@ const Home = () => {
         <div className="container">
           <div className="activity-wrapper row position-relative">
             <div className={`px-0 col-12 `}>
-              <div className="row g-3 card-wrapper">
-                {Array.isArray(filteredlistings) && listings.length > 0 ? (
-                  filteredlistings.map((listing, index) => (
-                    <div
-                      className="  d-flex justify-content-center col-xl-3  col-lg-4  col-12 ssb "
-                      key={index}
-                    >
-                      <ActivityCard data={listing} />
-                    </div>
-                  ))
-                ) : (
-                  <div>No listings available</div>
-                )}
-                {isLoading && <Loader />}
-              </div>
+              <InfiniteScroll
+                dataLength={filteredlistings.length}
+                next={fetchData}
+                hasMore={filteredlistings.length < dummyActivities.length}
+                loader={<p>Loading...</p>}
+              >
+                <div className="row g-3 card-wrapper">
+                  {Array.isArray(filteredlistings) &&
+                  dummyActivities.length > 0 ? (
+                    filteredlistings.map((listing, index) => (
+                      <div
+                        className="  d-flex justify-content-center col-xl-3  col-lg-4  col-12 ssb "
+                        key={index}
+                      >
+                        <ActivityCard data={listing} />
+                      </div>
+                    ))
+                  ) : (
+                    <div>No listings available</div>
+                  )}
+                </div>
+              </InfiniteScroll>
             </div>
           </div>
         </div>
