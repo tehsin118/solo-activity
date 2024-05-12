@@ -80,6 +80,8 @@
   }
 
   .accordion-header {
+    width: fit-content !important;
+    margin: auto;
     button {
       padding: 0;
       box-shadow: none;

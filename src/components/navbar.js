@@ -66,7 +66,7 @@ const Navbar = ({ onSearch }) => {
           <Accordion.Header>
             {optionBtn && (
               <div
-                className="v-center h-center w-100   hide-on-mobile opt-btn mb-0"
+                className="v-center h-center  m-auto   hide-on-mobile opt-btn mb-0"
                 style={{ paddingLeft: "40px" }}
               >
                 <span
