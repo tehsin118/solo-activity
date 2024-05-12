@@ -1,0 +1,23 @@
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid #7f7f85;
+  border-right-color: #f2f1f6;
+  animation: l2 1s infinite linear;
+}
+@keyframes l2 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.loader-wrapper {
+  //   position: fixed;
+  //   left: 50%;
+  //   bottom: 100px;
+  //   z-index: 999;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+}

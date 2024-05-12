@@ -6,13 +6,17 @@ import { Tooltip } from "antd";
 import dummyActivities from "./dummydata";
 import Navbar from "../components/navbar"; // Import Navbar component
 import { useNavigate } from "react-router-dom";
+import Loader from "../components/loader";
 //import { searchListings } from "./api"; // Import the API function for searching listings
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [listings, setListings] = useState([]);
   const [filteredlistings, setFilteredlistings] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [offset, setOffset] = useState(0);
 
+  const limit = 80; // limit to show activities
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
@@ -55,6 +59,40 @@ const Home = () => {
     }
   };
 */
+
+  useEffect(() => {
+    const fetchActivities = () => {
+      setIsLoading(true);
+
+      setTimeout(() => {
+        const newActivities = dummyActivities.slice(offset, offset + limit);
+        setListings((prevActivities) => [...prevActivities, ...newActivities]);
+        setOffset((prevOffset) => prevOffset + limit);
+        setIsLoading(false);
+      }, 1000);
+    };
+
+    // Add event listener for scrolling
+    const handleScroll = () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop ===
+        document.documentElement.offsetHeight
+      ) {
+        fetchActivities();
+      }
+      if (listings.length === dummyActivities.length) {
+        // If all data is fetched, remove scroll event listener
+        setIsLoading(false);
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+
+    if (listings.length !== dummyActivities.length) {
+      window.addEventListener("scroll", handleScroll);
+    }
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [offset]);
   return (
     <>
       <Navbar onSearch={handleSearch} />
@@ -63,8 +101,7 @@ const Home = () => {
           <div className="activity-wrapper row position-relative">
             <div className={`px-0 col-12 `}>
               <div className="row g-3 card-wrapper">
-                {Array.isArray(filteredlistings) &&
-                filteredlistings.length > 0 ? (
+                {Array.isArray(filteredlistings) && listings.length > 0 ? (
                   filteredlistings.map((listing, index) => (
                     <div
                       className="  d-flex justify-content-center col-xl-3  col-lg-4  col-12 ssb "
@@ -76,6 +113,7 @@ const Home = () => {
                 ) : (
                   <div>No listings available</div>
                 )}
+                {isLoading && <Loader />}
               </div>
             </div>
           </div>

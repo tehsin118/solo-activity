@@ -195,6 +195,11 @@
   background: #fff;
   padding: 1rem !important;
   border-radius: 20px;
+  .additional-details-wrapper {
+    width: 50%;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .FcKIT-btn {
   font-size: 16px;
@@ -247,6 +252,24 @@
       padding-bottom: 0;
       border: 0;
     }
+  }
+}
+.opt-btn {
+  margin-bottom: 20px;
+  span {
+    cursor: pointer;
+  }
+  img {
+    width: 18px;
+    opacity: 0.3;
+  }
+}
+.opt-btn-mb {
+  gap: 10px;
+  text-transform: lowercase;
+
+  img {
+    width: 18px;
   }
 }
 
@@ -324,26 +347,15 @@
       }
     }
   }
-
+  .op-hours {
+    width: 100% !important;
+  }
   .ant-modal {
     top: 25% !important;
   }
-}
-.opt-btn {
-  margin-bottom: 20px;
-  span {
-    cursor: pointer;
-  }
-  img {
-    width: 18px;
-    opacity: 0.3;
-  }
-}
-.opt-btn-mb {
-  gap: 10px;
-  text-transform: lowercase;
-
-  img {
-    width: 18px;
+  .additional-details {
+    .additional-details-wrapper {
+      display: flex !important;
+    }
   }
 }
