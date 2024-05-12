@@ -8,6 +8,28 @@
     width: 250px !important;
   }
 }
+.selected-chips {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+  margin-top: 20px;
+  .chips {
+    font-size: 14px;
+    background: #7f7f85;
+    color: #f2f1f6;
+    width: fit-content;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 30px;
+  }
+  p {
+    text-decoration: underline;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .filter-header {
     justify-content: space-between;
@@ -15,6 +37,7 @@
     gap: 20px;
     .input-box {
       overflow: hidden;
+      width: 100% !important;
       input {
         width: 100%;
       }
@@ -31,5 +54,12 @@
   }
   .ant-picker {
     width: 100% !important;
+  }
+  .ant-modal {
+    vertical-align: unset !important;
+  }
+
+  .selected-chips {
+    margin-left: 0 !important;
   }
 }

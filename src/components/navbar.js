@@ -29,64 +29,68 @@ const Navbar = ({ onSearch }) => {
 
   return (
     <div>
-      <nav className='nav   pt-2 container '>
-        <div className='w-100 v-center justify-content-between'>
-          <Link to='/' className='v-center'>
-            <img src={logo} alt='' className='logo' />
-            <h1 className='text-black'>Solos</h1>
+      <nav className="nav   pt-2 container ">
+        <div className="w-100 v-center justify-content-between">
+          <Link to="/" className="v-center">
+            <img src={logo} alt="" className="logo" />
+            <h1 className="text-black">Solos</h1>
           </Link>
 
-          <div className='filter-header   hide-on-mobile'>
+          <div className="filter-header   hide-on-mobile">
             <div
-              className='input-box d-flex align-items-center   pointer  search-box active'
+              className="input-box d-flex align-items-center   pointer  search-box active"
               style={{
                 width: "255px",
               }}
             >
               <input
-                type='text'
-                name='searchBox'
-                placeholder='Search here...'
+                type="text"
+                name="searchBox"
+                placeholder="Search here..."
                 onChange={handleSearch} // Call handleSearch on input change
               />
 
-              <img src={search} alt='' />
+              <img src={search} alt="" />
             </div>
           </div>
 
-          <div className='v-center'>
-            <div className='logged'>
-              <img src={user} alt='' />
+          <div className="v-center">
+            <div className="logged">
+              <img src={user} alt="" />
             </div>
           </div>
         </div>
 
         {optionBtn && (
           <div
-            className='v-center h-center w-100   hide-on-mobile opt-btn'
+            className="v-center h-center w-100   hide-on-mobile opt-btn"
             style={{ paddingLeft: "40px" }}
           >
             <span
-              className='m-auto  text-center text-grey v-center gap-2'
+              className="m-auto  text-center text-grey v-center gap-2"
               onClick={() => setShowMenu(!showMenu)}
             >
               options
-              <img src={arrowRight} alt='' className='' />
+              <img src={arrowRight} alt="" className="" />
             </span>
           </div>
         )}
 
         <div
-          className='w-75 m-0 m-auto ps-2 '
+          className="  hide-on-mobile w-100"
           style={{
-            height: showMenu ? "100px" : "0px",
+            height: showMenu ? "auto" : "0px",
             transition: "all 0.5s ease",
             overflow: "hidden",
           }}
         >
-          <Filter className='me-0' />
+          <Filter className=" gap-3 me-0 ms-5" />
         </div>
       </nav>
+      <div className="container">
+        {/* class d-none used to hide mobile filter on desktop */}
+        <Filter className="d-none" />
+      </div>
     </div>
   );
 };

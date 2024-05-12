@@ -57,21 +57,17 @@ const Home = () => {
 */
   return (
     <>
-      <div className='home-page position-relative'>
-        <div className='container'>
-          <Filter className='d-none' />
-
-          {/* Pass handleSearch function as prop to Navbar */}
-          <Navbar onSearch={handleSearch} />
-
-          <div className='activity-wrapper row position-relative'>
+      <Navbar onSearch={handleSearch} />
+      <div className="home-page position-relative">
+        <div className="container">
+          <div className="activity-wrapper row position-relative">
             <div className={`px-0 col-12 `}>
-              <div className='row g-3 card-wrapper'>
+              <div className="row g-3 card-wrapper">
                 {Array.isArray(filteredlistings) &&
                 filteredlistings.length > 0 ? (
                   filteredlistings.map((listing, index) => (
                     <div
-                      className='  d-flex justify-content-center col-xl-3  col-lg-4  col-12 ssb '
+                      className="  d-flex justify-content-center col-xl-3  col-lg-4  col-12 ssb "
                       key={index}
                     >
                       <ActivityCard data={listing} />
@@ -86,16 +82,16 @@ const Home = () => {
         </div>
 
         <Icon
-          icon='emojione-monotone:down-arrow'
-          width='32'
-          height='32'
+          icon="emojione-monotone:down-arrow"
+          width="32"
+          height="32"
           className={`scroll-btn rounded-circle ${
             isVisible ? "opacity-1" : "opacity-0"
           }`}
           onClick={scrollToTop}
         />
 
-        <Tooltip title=' spontaneous suggestion'>
+        <Tooltip title=" spontaneous suggestion">
           <button
             className={`FcKIT-btn ${isVisible ? "opacity-1" : "opacity-0"}`}
           >

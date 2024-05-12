@@ -17,7 +17,7 @@
   align-items: center;
   color: #7f7f85;
   font-weight: normal;
-
+  width: 255px;
   span {
     color: #7f7f85;
   }
@@ -65,4 +65,24 @@
   &.active {
     width: 100%;
   }
+}
+
+.checkbox-wrapper {
+  border: 1px solid #000;
+  border-radius: 30px;
+  overflow: hidden;
+  width: fit-content;
+}
+.checkbox-wrapper label {
+  cursor: pointer;
+}
+.checkbox-wrapper input[type="checkbox"]:not(:checked) + p {
+  padding: 4px 14px;
+  background-color: transparent;
+  background-color: #e2e3e8;
+}
+.checkbox-wrapper input[type="checkbox"]:checked + p {
+  padding: 4px 14px;
+  background-color: black;
+  color: white;
 }
