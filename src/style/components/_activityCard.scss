@@ -64,6 +64,12 @@
         color: #000;
       }
     }
+    & > div {
+      align-items: start !important;
+      h3 {
+        width: calc(100% - 85px);
+      }
+    }
   }
 
   &:hover {

@@ -105,12 +105,6 @@ const Filter = (props) => {
       <div>
         {/* for desktop */}
         <div className={`filter-header  hide-on-mobile  ${props.className}`}>
-          {/* <Popover content={content} title=" " trigger="click">
-          <span className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2">
-            <img src={filter} alt="" className="opacity-30" />
-            Show Filter
-          </span>
-        </Popover> */}
           <div className="d-flex gap-2">
             <span
               className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2"
@@ -139,19 +133,6 @@ const Filter = (props) => {
           <div className="input-box rounded-pill">
             <DatePicker onChange={onChange} showTime needConfirm={false} />
           </div>
-
-          {/* <span onClick={() => setSearchBox(!searchBox)}>
-          <div
-            className="input-box d-flex align-items-center  pointer  search-box activ e"
-            style={{
-              width: searchBox ? "250px" : "50px",
-              transition: "width 0.5s ease",
-            }}
-          >
-            <input type="text" name="searchBox" placeholder="Search here..." />
-            <img src={search} alt="" />
-          </div>
-        </span> */}
         </div>
 
         {/* for mobile */}
@@ -208,18 +189,6 @@ const Filter = (props) => {
                   />
                 </div>
 
-                {/* popup */}
-                {/* <Popover
-            content={content}
-            placement="bottom"
-            title=" "
-            trigger="click"
-          >
-            <span className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2">
-              <img src={filter} alt="" className="opacity-30" />
-              Show Filter
-            </span>
-          </Popover> */}
                 <div
                   className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2"
                   onClick={showModal}
@@ -228,67 +197,15 @@ const Filter = (props) => {
                   Show Filter
                 </div>
                 <p
-                  className={`small d-flex align-items-center pointer text-underline 
+                  className={`small d-flex  align-items-center text-center pointer text-underline 
               ${selectedTags.length > 0 ? "d-flex" : "d-none"}`}
                   onClick={() => setSelectedTags([])}
                 >
-                  <u>Clear All</u>
+                  <u className="m-auto">Clear All</u>
                 </p>
               </div>
             </Accordion.Body>
           </Accordion>
-
-          <div
-            className={`mobile-filter d-flex flex-column gap-3 mt-3 ${
-              showMenu ? "show-menu" : "hide-menu"
-            }`}
-            style={{
-              minHeight: showMenu ? "120px" : " 0px",
-              overflow: "hidden",
-              transition: "all 0.3s ease", // Optional: add smooth transition
-            }}
-          >
-            {/* location */}
-            <div className="input-box  rounded-pill br-30 ">
-              <input type="text" placeholder="Linz" />
-            </div>
-
-            {/* date-picker */}
-            <div className="input-box rounded-pill">
-              <DatePicker onChange={onChange} showTime needConfirm={false} />
-            </div>
-
-            {/* popup */}
-            {/* <Popover
-            content={content}
-            placement="bottom"
-            title=" "
-            trigger="click"
-          >
-            <span className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2">
-              <img src={filter} alt="" className="opacity-30" />
-              Show Filter
-            </span>
-          </Popover> */}
-            <div
-              className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2"
-              onClick={showModal}
-            >
-              <img src={filter} alt="" className="opacity-30" />
-              Show Filter
-            </div>
-            <p
-              className={`small d-flex align-items-center pointer text-underline 
-              ${
-                selectedTags.length > 0
-                  ? "visible opacity-1"
-                  : "opacity-0 invisible"
-              }`}
-              onClick={() => setSelectedTags([])}
-            >
-              <u>Clear All</u>
-            </p>
-          </div>
         </div>
 
         <div>

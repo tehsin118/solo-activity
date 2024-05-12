@@ -17,6 +17,7 @@ const ActivityDetails = () => {
   useScrollToTop();
   const [activity, setActivity] = useState(null); // State to hold the activity data
   const { id } = useParams(); // Get the id parameter from the URL
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     // Find the activity with the matching id from the dummy data
@@ -28,6 +29,19 @@ const ActivityDetails = () => {
     }
   }, [id]); // Re-run the effect whenever the id parameter changes
 
+  // handle Scroll to show btn
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      setIsVisible(scrollY > 600);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div>
       <Header />
@@ -67,13 +81,22 @@ const ActivityDetails = () => {
                 <a href={activity.website} target="_blank" rel="noreferrer">
                   Go to Website
                 </a>
+                {isVisible && (
+                  <a
+                    href={activity.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="goto-web-btn"
+                  >
+                    Go to Website
+                  </a>
+                )}
                 <h6 className="text-white">
                   Category:{" "}
                   {activity.categories &&
                     activity.categories.length > 0 &&
                     activity.categories[0].name}
                 </h6>
-
                 {/* Adjusted to properly display the category name */}
               </div>
             </div>

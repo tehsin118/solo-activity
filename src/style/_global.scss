@@ -30,6 +30,9 @@ input {
   &::-webkit-outer-spin-button {
     display: none;
   }
+  &:focus-within {
+    box-shadow: none !important;
+  }
 }
 
 .pointer {
