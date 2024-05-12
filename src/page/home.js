@@ -14,23 +14,13 @@ const Home = () => {
   const [filteredlistings, setFilteredlistings] = useState([]);
 
   const limit = 15;
+
+  //set data getting from API
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      setIsVisible(scrollY > 100);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    setFilteredlistings(dummyActivities.slice(0, limit));
   }, []);
 
-  useEffect(() => {
-    setFilteredlistings(dummyActivities); // Initialize filtered listings with all listings
-  }, []);
-
+  // search
   const handleSearch = (keyword) => {
     const filteredListings = dummyActivities.filter((activity) =>
       activity.title.toLowerCase().includes(keyword.toLowerCase())
@@ -38,6 +28,7 @@ const Home = () => {
     setFilteredlistings(filteredListings.slice(0, limit));
   };
 
+  // onClick Scroll to top
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -45,6 +36,7 @@ const Home = () => {
     });
   };
 
+  // handle Scroll to show btn
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
@@ -57,11 +49,9 @@ const Home = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  useEffect(() => {
-    setFilteredlistings(dummyActivities.slice(0, limit));
-  }, []);
+
+  // fetching data
   const fetchData = () => {
-    // Simulating fetching data from API
     setTimeout(() => {
       setFilteredlistings([
         ...filteredlistings,
@@ -70,7 +60,7 @@ const Home = () => {
           filteredlistings.length + limit
         ),
       ]);
-    }, 1000); // Simulating delay
+    }, 1000);
   };
 
   return (
