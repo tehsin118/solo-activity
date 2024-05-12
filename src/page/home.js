@@ -74,7 +74,7 @@ const Home = () => {
                 dataLength={filteredlistings.length}
                 next={fetchData}
                 hasMore={filteredlistings.length < dummyActivities.length}
-                loader={<Loader />}
+                loader={filteredlistings.length < limit ? <></> : <Loader />}
               >
                 <div className="row g-3 ">
                   {Array.isArray(filteredlistings) &&
