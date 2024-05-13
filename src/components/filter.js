@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import filter from "../assets/icon/filter.svg";
 import search from "../assets/icon/search-grey.svg";
 import { Popover, DatePicker, Collapse, Panel } from "antd";
@@ -13,57 +13,8 @@ import { Accordion, AccordionBody } from "react-bootstrap";
 const Filter = (props) => {
   const [searchBox, setSearchBox] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [formData, setFormData] = useState({
-    category1: false,
-    category2: false,
-    category3: false,
-  });
-  const handleChange = (e) => {
-    const { name } = e.target;
-    setFormData({
-      ...formData,
-      [name]: !formData[name],
-    });
-  };
-  const content = (
-    <>
-      <div className="d-flex flex-column gap-1 filter-content">
-        <label className=" fw-medium v-center gap-2  text-capitalize pointer">
-          <img src={formData.category1 ? checked : uncheck} alt="" />
-          category 1
-          <input
-            type="checkbox"
-            name="category1"
-            checked={formData.category1}
-            onChange={handleChange}
-            className="d-none"
-          />
-        </label>
-        <label className=" fw-medium v-center gap-2 text-capitalize pointer">
-          <img src={formData.category2 ? checked : uncheck} alt="" />
-          category 2
-          <input
-            type="checkbox"
-            name="category2"
-            checked={formData.category2}
-            onChange={handleChange}
-            className="d-none"
-          />
-        </label>
-        <label className=" fw-medium v-center gap-2 text-capitalize pointer">
-          <img src={formData.category3 ? checked : uncheck} alt="" />
-          category 3
-          <input
-            type="checkbox"
-            name="category3"
-            checked={formData.category3}
-            onChange={handleChange}
-            className="d-none"
-          />
-        </label>
-      </div>
-    </>
-  );
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [tags, setTags] = useState([]);
 
   const onChange = (date, dateString) => {
     console.log(date, dateString);
@@ -80,8 +31,6 @@ const Filter = (props) => {
     setIsModalOpen(false);
   };
 
-  const [selectedTags, setSelectedTags] = useState([]);
-
   const toggleTag = (e) => {
     const tag = e.target.value;
 
@@ -94,12 +43,19 @@ const Filter = (props) => {
     }
   };
 
-  console.log(selectedTags);
   const removeTag = (tagToRemove) => {
     console.log(tagToRemove);
-    setSelectedTags(selectedTags.filter((tag) => tag !== tagToRemove));
-    console.log(selectedTags);
+    setTags(tags.filter((tag) => tag !== tagToRemove));
   };
+
+  const handleApply = () => {
+    setTags(selectedTags);
+    handleCancel();
+  };
+  useEffect(() => {
+    setSelectedTags(tags);
+  }, [tags]);
+
   return (
     <>
       <div>
@@ -117,12 +73,11 @@ const Filter = (props) => {
 
             <p
               className={`small d-flex align-items-center pointer text-underline 
-              ${
-                selectedTags.length > 0
-                  ? "visible opacity-1"
-                  : "opacity-0 invisible"
-              }`}
-              onClick={() => setSelectedTags([])}
+              ${tags.length > 0 ? "visible opacity-1" : "opacity-0 invisible"}`}
+              onClick={() => {
+                setSelectedTags([]);
+                setTags([]);
+              }}
             >
               <u>Clear All</u>
             </p>
@@ -198,8 +153,11 @@ const Filter = (props) => {
                 </div>
                 <p
                   className={`small d-flex  align-items-center text-center pointer text-underline 
-              ${selectedTags.length > 0 ? "d-flex" : "d-none"}`}
-                  onClick={() => setSelectedTags([])}
+              ${tags.length > 0 ? "d-flex" : "d-none"}`}
+                  onClick={() => {
+                    setSelectedTags([]);
+                    setTags([]);
+                  }}
                 >
                   <u className="m-auto">Clear All</u>
                 </p>
@@ -209,9 +167,9 @@ const Filter = (props) => {
         </div>
 
         <div>
-          {selectedTags.length > 0 && (
+          {tags.length > 0 && (
             <ul className="selected-chips ms-5">
-              {selectedTags.map((item, index) => (
+              {tags.map((item, index) => (
                 <li className="chips pointer" key={index}>
                   {item}
                   <Icon
@@ -242,6 +200,9 @@ const Filter = (props) => {
             onChange={toggleTag}
           />
         </div>
+        <button onClick={handleApply} className="btn btn-primary mt-3">
+          Apply
+        </button>
       </Modal>
     </>
   );
