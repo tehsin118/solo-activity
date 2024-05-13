@@ -200,7 +200,7 @@ const Filter = (props) => {
             onChange={toggleTag}
           />
         </div>
-        <button onClick={handleApply} className="btn btn-primary mt-3">
+        <button onClick={handleApply} className="  mt-3">
           Apply
         </button>
       </Modal>
