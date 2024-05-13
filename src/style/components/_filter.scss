@@ -29,7 +29,9 @@
     text-decoration: underline;
   }
 }
-
+.ant-picker-outlined:focus-within {
+  box-shadow: none !important;
+}
 @media screen and (max-width: 767px) {
   .filter-header {
     justify-content: space-between;
