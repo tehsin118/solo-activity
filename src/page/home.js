@@ -1,31 +1,51 @@
-import React, { useEffect, useState } from "react";
-import ActivityCard from "../components/card";
-import Filter from "../components/filter";
 import { Icon } from "@iconify/react";
 import { Tooltip } from "antd";
-import dummyActivities from "./dummydata";
-import Navbar from "../components/navbar"; // Import Navbar component
-import { useNavigate } from "react-router-dom";
-import Loader from "../components/loader";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useDispatch, useSelector } from "react-redux";
+import ActivityCard from "../components/card";
+import Loader from "../components/loader";
+import Navbar from "../components/navbar"; // Import Navbar component
+import {
+  selectActivities,
+  setAllActivities,
+  setCategories,
+} from "../redux-query/ActivitySlice";
+import { AllActivitiesAPI, AllCategoriesAPI, BaseUrl } from "../services";
+import dummyActivities from "./dummydata";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const data = useSelector(selectActivities);
+  console.log("all activities", data);
   const [isVisible, setIsVisible] = useState(false);
   const [filteredlistings, setFilteredlistings] = useState([]);
-
+  const [activitySearch, setActivitySearch] = useState("");
+  const [locationSearch, setLocationSearch] = useState("");
   const limit = 15;
 
   //set data getting from API
   useEffect(() => {
-    setFilteredlistings(dummyActivities.slice(0, limit));
-  }, []);
+    setFilteredlistings(data.slice(0, limit));
+  }, [data]);
 
   // search
   const handleSearch = (keyword) => {
-    const filteredListings = dummyActivities.filter((activity) =>
+    setActivitySearch(keyword);
+    const filteredListings = data.filter((activity) =>
       activity.title.toLowerCase().includes(keyword.toLowerCase())
     );
-    setFilteredlistings(filteredListings.slice(0, limit));
+    setFilteredlistings(filteredListings);
+    // setFilteredlistings(filteredListings.slice(0, limit));
+  };
+  const handleLocationSearch = (keyword) => {
+    setLocationSearch(keyword);
+    const filteredListings = data.filter((activity) =>
+      activity?.location.toLowerCase().includes(keyword.toLowerCase())
+    );
+    setFilteredlistings(filteredListings);
+    // setFilteredlistings(filteredListings.slice(0, limit));
   };
 
   // onClick Scroll to top
@@ -38,6 +58,7 @@ const Home = () => {
 
   // handle Scroll to show btn
   useEffect(() => {
+    CallAPIs();
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
       setIsVisible(scrollY > 100);
@@ -52,20 +73,63 @@ const Home = () => {
 
   // fetching data
   const fetchData = () => {
-    setTimeout(() => {
-      setFilteredlistings([
-        ...filteredlistings,
-        ...dummyActivities.slice(
-          filteredlistings.length,
-          filteredlistings.length + limit
-        ),
-      ]);
-    }, 1000);
+    console.log("searsfsdfs", activitySearch);
+    if (activitySearch == "" && locationSearch == "") {
+      setTimeout(() => {
+        setFilteredlistings([
+          ...filteredlistings,
+          ...data.slice(
+            filteredlistings.length,
+            filteredlistings.length + limit
+          ),
+        ]);
+      }, 3000);
+    }
   };
+
+  // API Requests
+  const CallAPIs = () => {
+    GetCategories();
+    GetAllActivities();
+  };
+  const GetCategories = async () => {
+    try {
+      const resp = await axios.get(`${BaseUrl}/${AllCategoriesAPI}`, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      const list = resp?.data
+        ?.filter((item) => item?.parentCategoryId == null)
+        .map((val) => val?.name);
+      if (list.length > 0) {
+        console.log("categories res",list);
+        dispatch(setCategories(list));
+      }
+    } catch (error) {
+      console.log("==== categories response erer", error);
+    }
+  };
+
+  const GetAllActivities = async () => {
+    try {
+      const resp = await axios.get(`${BaseUrl}/${AllActivitiesAPI}`, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      console.log("GetAllActivities resp",resp.data);
+      if (resp.data.length > 0) dispatch(setAllActivities(resp.data));
+    } catch (error) {
+      console.log("Activity error:", error);
+    }
+  };
+
+  // UI Part
 
   return (
     <>
-      <Navbar onSearch={handleSearch} />
+      <Navbar onSearch={handleSearch} onLocationSearh={handleLocationSearch} />
       <div className="home-page position-relative">
         <div className="container">
           <div className="activity-wrapper row position-relative">
@@ -78,7 +142,7 @@ const Home = () => {
               >
                 <div className="row g-3 ">
                   {Array.isArray(filteredlistings) &&
-                  dummyActivities.length > 0 ? (
+                  filteredlistings.length > 0 ? (
                     filteredlistings.map((listing, index) => (
                       <div
                         className="  d-flex justify-content-center col-xl-3  col-lg-4  col-12 ssb "
@@ -88,7 +152,10 @@ const Home = () => {
                       </div>
                     ))
                   ) : (
-                    <div>No listings available</div>
+                    <>
+                      <Loader />
+                      <div>No listings available</div>
+                    </>
                   )}
                 </div>
               </InfiniteScroll>
