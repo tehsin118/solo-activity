@@ -7,7 +7,7 @@ import search from "../assets/icon/search-grey.svg";
 import Filter from "./filter";
 import Accordion from "react-bootstrap/Accordion";
 
-const Navbar = ({ onSearch }) => {
+const Navbar = ({ onSearch, onLocationSearh }) => {
   // Pass onSearch function as prop
   const [showMenu, setShowMenu] = useState(false);
   const [optionBtn, setOptionBtn] = useState(true);
@@ -80,7 +80,7 @@ const Navbar = ({ onSearch }) => {
             )}
           </Accordion.Header>
           <Accordion.Body>
-            <Filter className=" gap-3 me-0 ms-5" />
+            <Filter className=" gap-3 me-0 ms-5" onSearch={onLocationSearh} />
           </Accordion.Body>
         </Accordion>
       </nav>
@@ -88,7 +88,7 @@ const Navbar = ({ onSearch }) => {
       {/* for mobile */}
       <div className="container  ">
         {/* class d-none used to hide mobile filter on desktop */}
-        <Filter className="d-none" />
+        <Filter className="d-none" onSearch={onLocationSearh} />
       </div>
     </div>
   );

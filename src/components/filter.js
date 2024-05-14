@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { Icon } from "@iconify/react";
+import { DatePicker, Modal } from "antd";
+import { Accordion } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import drop from "../assets/icon/chevron-down-small.svg";
 import filter from "../assets/icon/filter.svg";
 import search from "../assets/icon/search-grey.svg";
-import { Popover, DatePicker, Collapse, Panel } from "antd";
-import checked from "../assets/icon/checkbox-selected.svg";
-import uncheck from "../assets/icon/checkbox.svg";
-import drop from "../assets/icon/chevron-down-small.svg";
-import { Button, Modal } from "antd";
+import { selectCategoires } from "../redux-query/ActivitySlice";
 import Checkbox from "./checkbox";
-import { Icon } from "@iconify/react";
-import { Accordion, AccordionBody } from "react-bootstrap";
 
-const Filter = (props) => {
+const Filter = ({ className, onSearch }) => {
+  const categoryTags = useSelector(selectCategoires);
   const [searchBox, setSearchBox] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [selectedTags, setSelectedTags] = useState([]);
@@ -33,7 +33,6 @@ const Filter = (props) => {
 
   const toggleTag = (e) => {
     const tag = e.target.value;
-
     if (e.target.checked) {
       setSelectedTags([...selectedTags, tag]);
     } else {
@@ -60,7 +59,7 @@ const Filter = (props) => {
     <>
       <div>
         {/* for desktop */}
-        <div className={`filter-header  hide-on-mobile  ${props.className}`}>
+        <div className={`filter-header  hide-on-mobile  ${className}`}>
           <div className="d-flex gap-2">
             <span
               className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2"
@@ -83,7 +82,11 @@ const Filter = (props) => {
             </p>
           </div>
           <div className="input-box  rounded-pill br-30  ms-5">
-            <input type="text" placeholder="Linz" />
+            <input
+              type="text"
+              placeholder="Linz"
+              onChange={(e) => onSearch(e.target.value)}
+            />
           </div>
           <div className="input-box rounded-pill">
             <DatePicker onChange={onChange} showTime needConfirm={false} />
@@ -185,7 +188,6 @@ const Filter = (props) => {
           )}
         </div>
       </div>
-
       <Modal
         open={isModalOpen}
         onOk={handleOk}
@@ -195,7 +197,7 @@ const Filter = (props) => {
       >
         <div className="pt-3 d-flex flex-wrap gap-3">
           <Checkbox
-            values={initialTags}
+            values={categoryTags}
             selectedTags={selectedTags}
             onChange={toggleTag}
           />
@@ -208,15 +210,15 @@ const Filter = (props) => {
   );
 };
 
-const initialTags = [
-  "Adventure & Sports",
-  "Entertainment & Leisure",
-  "Outdoor & Nature",
-  "Food & Drink",
-  "Culture & Art",
-  "Wellness & Health",
-  "Education & Learning",
-  "Professional Services",
-  "Technology & Innovatio",
-];
+// const initialTags = [
+//   "Adventure & Sports",
+//   "Entertainment & Leisure",
+//   "Outdoor & Nature",
+//   "Food & Drink",
+//   "Culture & Art",
+//   "Wellness & Health",
+//   "Education & Learning",
+//   "Professional Services",
+//   "Technology & Innovatio",
+// ];
 export default Filter;

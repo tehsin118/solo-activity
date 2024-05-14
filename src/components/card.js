@@ -10,14 +10,14 @@ const ActivityCard = ({ data }) => {
 
   return (
     <div className="activity-card">
-      <img src={data.headerImage} alt={"Header"} className="header-image" />
+      <img src={data?.headerImage} alt={"Header"} className="header-image" />
 
       <div className="footer flex-column pt-2 w-100">
         <div className="v-center w-100 justify-content-between">
-          <h3>{data.title.substring(0, 28)}</h3>
+          <h3>{data?.title?.substring(0, 28)}</h3>
           <a onClick={handleClick}>Read More</a>
         </div>
-        <p className="small mt-2 mb-2">{data.shortDescription}</p>
+        <p className="small mt-2 mb-2">{data?.shortDescription}</p>
       </div>
     </div>
   );

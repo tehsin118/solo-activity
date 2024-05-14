@@ -1,50 +1,46 @@
-import React, { useEffect, useState } from "react";
-import thumbnail from "../assets/image/artwork2.png";
-import { useParams } from "react-router-dom"; // Import useParams to get the listing ID from the URL
-import bannerImg from "../assets/image/banner.jpg";
 import { Icon } from "@iconify/react";
-import { Image } from "antd";
-import Slider from "../components/slider/slider";
-import useScrollToTop from "../hook/useScrollToTop";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"; // Import useParams to get the listing ID from the URL
 import Slider2 from "../components/slider/slider2";
-
+import useScrollToTop from "../hook/useScrollToTop";
 import Header from "../components/header";
-
-import ListingModel from "./models/ListingModel"; // Import the ListingModel
 import dummyActivities from "./dummydata";
+import axios from "axios";
+import { AllActivitiesAPI, BaseUrl } from "../services";
+import Loader from "../components/loader";
 
 const ActivityDetails = () => {
   useScrollToTop();
   const [activity, setActivity] = useState(null); // State to hold the activity data
   const { id } = useParams(); // Get the id parameter from the URL
-  const [isVisible, setIsVisible] = useState(false);
+  const [loading, setloading] = useState(false);
 
   useEffect(() => {
-    // Find the activity with the matching id from the dummy data
-    const selectedActivity = dummyActivities.find(
-      (item) => item.id === parseInt(id)
-    );
-    if (selectedActivity) {
-      setActivity(selectedActivity); // Set the activity state with the selected activity
-    }
+    CallAPI();
   }, [id]); // Re-run the effect whenever the id parameter changes
 
-  // handle Scroll to show btn
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      setIsVisible(scrollY > 600);
-    };
+  // API Request
+  const CallAPI = async () => {
+    setloading(true);
+    try {
+      const resp = await axios.get(`${BaseUrl}/${AllActivitiesAPI}/${id}`, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      console.log("1 activity detail resp", resp.data[0]);
+      setActivity(resp.data[0]);
+      setloading(false);
+    } catch (error) {
+      setloading(false);
+      console.log("Activity detail error:", error);
+    }
+  };
 
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
     <div>
       <Header />
+      {loading && <Loader />}
       {activity && (
         <div className="activity-details">
           <header>
@@ -81,16 +77,7 @@ const ActivityDetails = () => {
                 <a href={activity.website} target="_blank" rel="noreferrer">
                   Go to Website
                 </a>
-                {isVisible && (
-                  <a
-                    href={activity.website}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="goto-web-btn"
-                  >
-                    Go to Website
-                  </a>
-                )}
+
                 <h6 className="text-white">
                   Category:{" "}
                   {activity.categories &&
@@ -174,7 +161,7 @@ const ActivityDetails = () => {
 
             {/* cards images */}
             <div className="container">
-              <Slider2 />
+              <Slider2 sliderData={activity?.pictureUrls} />
               <div className="row  m-auto">
                 <div className="pb-3"></div>
                 <div className="col-12 px-0 mt-3 mb-5 pb-5 additional-details">

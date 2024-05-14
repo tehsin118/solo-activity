@@ -5,14 +5,13 @@ import Home from "./page/home";
 import ActivityDetails from "./page/activityDetails";
 import Navbar from "./components/navbar";
 import Header from "./components/header";
-
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <ToastContainer />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/activity-details/:id' element={<ActivityDetails />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/activity-details/:id" element={<ActivityDetails />} />
       </Routes>
     </div>
   );
