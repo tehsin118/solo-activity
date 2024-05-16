@@ -171,7 +171,6 @@ const Filter = ({ className, onSearch, activitySearch }) => {
             </Accordion.Body>
           </Accordion>
         </div>
-
         <div>
           {tags.length > 0 && (
             <ul className="selected-chips ms-5">
@@ -212,16 +211,4 @@ const Filter = ({ className, onSearch, activitySearch }) => {
     </>
   );
 };
-
-// const initialTags = [
-//   "Adventure & Sports",
-//   "Entertainment & Leisure",
-//   "Outdoor & Nature",
-//   "Food & Drink",
-//   "Culture & Art",
-//   "Wellness & Health",
-//   "Education & Learning",
-//   "Professional Services",
-//   "Technology & Innovatio",
-// ];
 export default Filter;

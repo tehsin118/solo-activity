@@ -174,10 +174,11 @@ const ActivityDetails = () => {
                           width="21"
                           height="21"
                         />
-                        Highlights:
+                        Price:
                       </h6>
-                      <p className="small">{activity?.highlights}</p>
+                      <p className="small">{activity?.price}</p>
                     </div>
+
                     <div>
                       <h6
                         className="fw-semibold  mb-2 text-capitalize v-center gap-1"
@@ -192,6 +193,7 @@ const ActivityDetails = () => {
                       </h6>
                       <p className="small">{activity.location}</p>
                     </div>
+                    
                     <div>
                       <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
                         <Icon
