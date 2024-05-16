@@ -176,7 +176,7 @@ const ActivityDetails = () => {
                         />
                         Highlights:
                       </h6>
-                      <p className="small">{activity.detailCategories}</p>
+                      <p className="small">{activity?.highlights}</p>
                     </div>
                     <div>
                       <h6

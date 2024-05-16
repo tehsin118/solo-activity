@@ -88,7 +88,7 @@ const Navbar = ({ onSearch, onLocationSearh }) => {
       {/* for mobile */}
       <div className="container  ">
         {/* class d-none used to hide mobile filter on desktop */}
-        <Filter className="d-none" onSearch={onLocationSearh} />
+        <Filter className="d-none" activitySearch={handleSearch} />
       </div>
     </div>
   );

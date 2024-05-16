@@ -9,36 +9,65 @@ import Loader from "../components/loader";
 import Navbar from "../components/navbar"; // Import Navbar component
 import {
   selectActivities,
+  selectAllTags,
   setAllActivities,
   setCategories,
 } from "../redux-query/ActivitySlice";
-import { AllActivitiesAPI, AllCategoriesAPI, BaseUrl } from "../services";
+import {
+  ActivityFilter,
+  AllActivitiesAPI,
+  AllCategoriesAPI,
+  BaseUrl,
+} from "../services";
 import dummyActivities from "./dummydata";
 
 const Home = () => {
   const dispatch = useDispatch();
   const data = useSelector(selectActivities);
-  console.log("all activities", data);
+  const tags = useSelector(selectAllTags);
   const [isVisible, setIsVisible] = useState(false);
   const [filteredlistings, setFilteredlistings] = useState([]);
   const [activitySearch, setActivitySearch] = useState("");
   const [locationSearch, setLocationSearch] = useState("");
   const [loader, setloader] = useState(false);
   const limit = 15;
-
   //set data getting from API
   useEffect(() => {
     setFilteredlistings(data.slice(0, limit));
   }, [data]);
 
+  useEffect(() => {
+    if (tags.length > 0) {
+      const res = filteredlistings.filter((item) => {
+        return tags.includes(item.categories[0]?.name);
+      });
+      setFilteredlistings(res);
+    } else {
+      setFilteredlistings(data.slice(0, limit));
+    }
+  }, [tags]);
+
   // search
-  const handleSearch = (keyword) => {
+  const handleSearch = async (keyword) => {
     setActivitySearch(keyword);
-    const filteredListings = data.filter((activity) =>
-      activity.title.toLowerCase().includes(keyword.toLowerCase())
-    );
-    setFilteredlistings(filteredListings);
-    // setFilteredlistings(filteredListings.slice(0, limit));
+    if (keyword.length >= 2) {
+      try {
+        const resp = await axios.get(
+          `${BaseUrl}/${ActivityFilter}?filterString=${keyword}`,
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
+        );
+        console.log("search res", resp);
+        setFilteredlistings(resp.data);
+      } catch (error) {
+        console.log("Search Error:", error);
+      }
+    } else {
+      setFilteredlistings(data.slice(0, limit));
+    }
   };
   const handleLocationSearch = (keyword) => {
     setLocationSearch(keyword);
@@ -46,7 +75,6 @@ const Home = () => {
       activity?.location.toLowerCase().includes(keyword.toLowerCase())
     );
     setFilteredlistings(filteredListings);
-    // setFilteredlistings(filteredListings.slice(0, limit));
   };
 
   // onClick Scroll to top
@@ -64,9 +92,7 @@ const Home = () => {
       const scrollY = window.scrollY || window.pageYOffset;
       setIsVisible(scrollY > 100);
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -119,7 +145,6 @@ const Home = () => {
           Accept: "application/json",
         },
       });
-      console.log("GetAllActivities resp", resp.data);
       if (resp.data.length > 0) dispatch(setAllActivities(resp.data));
       setloader(false);
     } catch (error) {
@@ -178,7 +203,6 @@ const Home = () => {
           }`}
           onClick={scrollToTop}
         />
-
         <Tooltip title=" spontaneous suggestion">
           <button
             className={`FcKIT-btn ${isVisible ? "opacity-1" : "opacity-0"}`}

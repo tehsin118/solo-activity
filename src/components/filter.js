@@ -2,19 +2,23 @@ import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { DatePicker, Modal } from "antd";
 import { Accordion } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import drop from "../assets/icon/chevron-down-small.svg";
 import filter from "../assets/icon/filter.svg";
 import search from "../assets/icon/search-grey.svg";
-import { selectCategoires } from "../redux-query/ActivitySlice";
+import {
+  selectCategoires,
+  setSelectedActivityTag,
+} from "../redux-query/ActivitySlice";
 import Checkbox from "./checkbox";
 
-const Filter = ({ className, onSearch }) => {
+const Filter = ({ className, onSearch, activitySearch }) => {
   const categoryTags = useSelector(selectCategoires);
   const [searchBox, setSearchBox] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [selectedTags, setSelectedTags] = useState([]);
   const [tags, setTags] = useState([]);
+  const dispatch = useDispatch();
 
   const onChange = (date, dateString) => {
     console.log(date, dateString);
@@ -51,8 +55,10 @@ const Filter = ({ className, onSearch }) => {
     setTags(selectedTags);
     handleCancel();
   };
+
   useEffect(() => {
     setSelectedTags(tags);
+    dispatch(setSelectedActivityTag(tags));
   }, [tags]);
 
   return (
@@ -67,9 +73,8 @@ const Filter = ({ className, onSearch }) => {
               style={{ width: "fit-content" }}
             >
               <img src={filter} alt="" className="opacity-30" />
-              Show Filter
+              Filter Categories
             </span>
-
             <p
               className={`small d-flex align-items-center pointer text-underline 
               ${tags.length > 0 ? "visible opacity-1" : "opacity-0 invisible"}`}
@@ -81,7 +86,7 @@ const Filter = ({ className, onSearch }) => {
               <u>Clear All</u>
             </p>
           </div>
-          <div className="input-box  rounded-pill br-30  ms-5">
+          <div className="input-box  rounded-pill br-30">
             <input
               type="text"
               placeholder="Linz"
@@ -107,9 +112,9 @@ const Filter = ({ className, onSearch }) => {
               <input
                 type="text"
                 name="searchBox"
-                placeholder="Search here..."
+                placeholder="Search here... mobile"
+                onChange={activitySearch}
               />
-
               <img src={search} alt="" />
             </div>
           </span>
@@ -137,7 +142,6 @@ const Filter = ({ className, onSearch }) => {
                 <div className="input-box  rounded-pill br-30 ">
                   <input type="text" placeholder="Linz" />
                 </div>
-
                 {/* date-picker */}
                 <div className="input-box rounded-pill">
                   <DatePicker
@@ -146,13 +150,12 @@ const Filter = ({ className, onSearch }) => {
                     needConfirm={false}
                   />
                 </div>
-
                 <div
                   className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2"
                   onClick={showModal}
                 >
                   <img src={filter} alt="" className="opacity-30" />
-                  Show Filter
+                  Filter Categories
                 </div>
                 <p
                   className={`small d-flex  align-items-center text-center pointer text-underline 
