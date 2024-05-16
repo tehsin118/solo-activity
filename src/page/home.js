@@ -19,7 +19,6 @@ import {
   AllCategoriesAPI,
   BaseUrl,
 } from "../services";
-import dummyActivities from "./dummydata";
 
 const Home = () => {
   const dispatch = useDispatch();
