@@ -30,7 +30,10 @@ const Home = () => {
   const [activitySearch, setActivitySearch] = useState("");
   const [locationSearch, setLocationSearch] = useState("");
   const [loader, setloader] = useState(false);
+  const [isFilterEnable, setisFilterEnable] = useState(false);
+
   const limit = 15;
+  console.log("all activity", data);
   //set data getting from API
   useEffect(() => {
     setFilteredlistings(data.slice(0, limit));
@@ -38,11 +41,15 @@ const Home = () => {
 
   useEffect(() => {
     if (tags.length > 0) {
-      const res = filteredlistings.filter((item) => {
+      setisFilterEnable(true);
+      const res = data.filter((item) => {
         return tags.includes(item.categories[0]?.name);
       });
+      console.log("filt response", res);
+      console.log("filt response length", res.length);
       setFilteredlistings(res);
     } else {
+      setisFilterEnable(false);
       setFilteredlistings(data.slice(0, limit));
     }
   }, [tags]);
@@ -168,7 +175,11 @@ const Home = () => {
                 <InfiniteScroll
                   dataLength={filteredlistings.length}
                   next={fetchData}
-                  hasMore={filteredlistings.length < dummyActivities.length}
+                  hasMore={
+                    isFilterEnable
+                      ? false
+                      : filteredlistings.length < data.length
+                  }
                   loader={filteredlistings.length < limit ? <></> : <Loader />}
                 >
                   <div className="row g-3 ">
