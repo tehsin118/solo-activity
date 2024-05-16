@@ -65,7 +65,7 @@ const Filter = ({ className, onSearch, activitySearch }) => {
     <>
       <div>
         {/* for desktop */}
-        <div className={`filter-header  hide-on-mobile  ${className}`}>
+        <div className={`filter-header  hide-on-mobile custom ${className}`}>
           <div className="d-flex gap-2">
             <span
               className="d-flex input-box border-0  align-items-center gap-2 pointer fw-medium rounded-pill bg-grey px-2"
@@ -86,7 +86,7 @@ const Filter = ({ className, onSearch, activitySearch }) => {
               <u>Clear All</u>
             </p>
           </div>
-          <div className="input-box  rounded-pill br-30">
+          <div className="input-box location-box  rounded-pill br-30">
             <input
               type="text"
               placeholder="Linz"

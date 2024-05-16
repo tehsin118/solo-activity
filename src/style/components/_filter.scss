@@ -3,6 +3,14 @@
   justify-content: space-between;
   padding: 20px 0px 10px 0px;
 }
+.filter-header {
+  &.custom {
+    margin-left: 13px !important;
+    .location-box {
+      margin-left: 35px;
+    }
+  }
+}
 .search-box {
   &:focus-within {
     width: 250px !important;
