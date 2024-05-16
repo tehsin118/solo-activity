@@ -166,56 +166,110 @@ const ActivityDetails = () => {
                 <div className="pb-3"></div>
                 <div className="col-12 px-0 mt-3 mb-5 pb-5 additional-details">
                   <h5>Additional Details:</h5>
-                  <div className="mt-4 d-flex flex-column gap-3  additional-details-wrapper">
-                    <div>
-                      <h6 className="fw-semibold mb-2 text-capitalize v-center gap-1">
-                        <Icon
-                          icon="icon-park-outline:people-speak"
-                          width="21"
-                          height="21"
-                        />
-                        Price:
-                      </h6>
-                      <p className="small">{activity?.price}</p>
-                    </div>
+                  <div className="add-wrap d-flex gap-5">
+                    <div className="mt-4 d-flex flex-column gap-3  additional-details-wrapper">
+                      <div>
+                        <h6 className="fw-semibold mb-2 text-capitalize v-center gap-1">
+                          <Icon
+                            icon="icon-park-outline:people-speak"
+                            width="21"
+                            height="21"
+                          />
+                          Price:
+                        </h6>
+                        <p className="small">{activity?.price}</p>
+                      </div>
 
-                    <div>
-                      <h6
-                        className="fw-semibold  mb-2 text-capitalize v-center gap-1"
-                        style={{ marginLeft: "-5px" }}
-                      >
-                        <Icon
-                          icon="system-uicons:location"
-                          width="21"
-                          height="21"
-                        />
-                        location:
-                      </h6>
-                      <p className="small">{activity.location}</p>
-                    </div>
-                    
-                    <div>
-                      <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
-                        <Icon
-                          icon="entypo:man"
-                          width="21"
-                          height="21"
+                      <div>
+                        <h6
+                          className="fw-semibold  mb-2 text-capitalize v-center gap-1"
                           style={{ marginLeft: "-5px" }}
-                        />
-                        age Requirement:
-                      </h6>
-                      <p className="small">{activity.ageRequirement} Years</p>
+                        >
+                          <Icon
+                            icon="system-uicons:location"
+                            width="21"
+                            height="21"
+                          />
+                          location:
+                        </h6>
+                        <p className="small">{activity.location}</p>
+                      </div>
+
+                      <div>
+                        <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
+                          <Icon
+                            icon="entypo:man"
+                            width="21"
+                            height="21"
+                            style={{ marginLeft: "-5px" }}
+                          />
+                          age Requirement:
+                        </h6>
+                        <p className="small">{activity.ageRequirement} Years</p>
+                      </div>
+                      <div>
+                        <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
+                          <Icon
+                            icon="game-icons:duration"
+                            width="22"
+                            height="22"
+                          />
+                          duration:
+                        </h6>
+                        <p className="small">{activity.duration}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
-                        <Icon
-                          icon="game-icons:duration"
-                          width="22"
-                          height="22"
-                        />
-                        duration:
-                      </h6>
-                      <p className="small">{activity.duration}</p>
+                    <div className="mt-4 d-flex flex-column gap-3  additional-details-wrapper">
+                      <div>
+                        <h6 className="fw-semibold mb-2 text-capitalize v-center gap-1">
+                          <Icon
+                            icon="icon-park-outline:people-speak"
+                            width="21"
+                            height="21"
+                          />
+                          Price:
+                        </h6>
+                        <p className="small">{activity?.price}</p>
+                      </div>
+
+                      <div>
+                        <h6
+                          className="fw-semibold  mb-2 text-capitalize v-center gap-1"
+                          style={{ marginLeft: "-5px" }}
+                        >
+                          <Icon
+                            icon="system-uicons:location"
+                            width="21"
+                            height="21"
+                          />
+                          location:
+                        </h6>
+                        <p className="small">{activity.location}</p>
+                      </div>
+
+                      <div>
+                        <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
+                          <Icon
+                            icon="entypo:man"
+                            width="21"
+                            height="21"
+                            style={{ marginLeft: "-5px" }}
+                          />
+                          age Requirement:
+                        </h6>
+                        <p className="small">{activity.ageRequirement} Years</p>
+                      </div>
+                      <div>
+                        <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
+                          <Icon
+                            icon="game-icons:duration"
+                            width="22"
+                            height="22"
+                          />
+                          duration:
+                        </h6>
+                        <p className="small">{activity.duration}</p>
+                      </div>
                     </div>
                   </div>
                 </div>

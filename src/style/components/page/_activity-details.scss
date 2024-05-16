@@ -197,9 +197,9 @@
   padding: 1rem !important;
   border-radius: 20px;
   .additional-details-wrapper {
-    width: 100%;
+    width: 50%;
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .FcKIT-btn {
@@ -357,8 +357,13 @@
   }
   .additional-details {
     .additional-details-wrapper {
+      width: 100%;
       display: flex !important;
     }
+  }
+  .add-wrap {
+    flex-direction: column !important;
+    gap: 20px !important;
   }
 }
 .carousel .slider-wrapper {
