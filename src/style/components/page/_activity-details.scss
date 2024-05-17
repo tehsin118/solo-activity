@@ -365,6 +365,18 @@
     flex-direction: column !important;
     gap: 20px !important;
   }
+
+  // .activity-details .banner-content {
+  //   position: absolute;
+  //   left: 0px;
+  //   right: 0;
+  //   z-index: 3;
+  //   bottom: 10%;
+  // }
+  .activity-details .banner-content h1 {
+    color: #fff;
+    font-size: 40px;
+  }
 }
 .carousel .slider-wrapper {
   max-height: 800px !important;
