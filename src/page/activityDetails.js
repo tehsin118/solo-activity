@@ -13,11 +13,25 @@ const ActivityDetails = () => {
   const [activity, setActivity] = useState(null); // State to hold the activity data
   const { id } = useParams(); // Get the id parameter from the URL
   const [loading, setloading] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     CallAPI();
   }, [id]); // Re-run the effect whenever the id parameter changes
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      setIsVisible(scrollY > 600);
+    };
+    // Add scroll event listener when component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove scroll event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   // API Request
   const CallAPI = async () => {
     setloading(true);
@@ -73,6 +87,16 @@ const ActivityDetails = () => {
                     <span> {activity.phone}</span>
                   </li>
                 </ul>
+
+                <a
+                  href={activity.website}
+                  target="_blank"
+                  className={`goto-web-btn ${
+                    isVisible ? "opacity-1" : "opacity-0"
+                  }`}
+                >
+                  Go to Website
+                </a>
                 <a href={activity.website} target="_blank" rel="noreferrer">
                   Go to Website
                 </a>
@@ -245,9 +269,7 @@ const ActivityDetails = () => {
 
                       {activity?.minPeople && (
                         <div>
-                          <h6
-                            className="fw-semibold  mb-2 text-capitalize v-center gap-1"
-                          >
+                          <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
                             <Icon
                               icon="mdi:account-multiple"
                               width="21"
