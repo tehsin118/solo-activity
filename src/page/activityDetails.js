@@ -218,8 +218,7 @@ const ActivityDetails = () => {
                         </h6>
                         <p className="small">{activity.duration}</p>
                       </div>
-                    </div>
-                    <div className="mt-4 d-flex flex-column gap-3  additional-details-wrapper">
+
                       <div>
                         <h6 className="fw-semibold mb-2 text-capitalize v-center gap-1">
                           <Icon
