@@ -32,7 +32,7 @@ const Home = () => {
   const [isFilterEnable, setisFilterEnable] = useState(false);
 
   const limit = 15;
-  console.log("all activity", data);
+
   //set data getting from API
   useEffect(() => {
     setFilteredlistings(data.slice(0, limit));
@@ -44,8 +44,6 @@ const Home = () => {
       const res = data.filter((item) => {
         return tags.includes(item.categories[0]?.name);
       });
-      console.log("filt response", res);
-      console.log("filt response length", res.length);
       setFilteredlistings(res);
     } else {
       setisFilterEnable(false);
@@ -66,7 +64,6 @@ const Home = () => {
             },
           }
         );
-        console.log("search res", resp);
         setFilteredlistings(resp.data);
       } catch (error) {
         console.log("Search Error:", error);
