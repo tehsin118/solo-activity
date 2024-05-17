@@ -171,7 +171,7 @@ const ActivityDetails = () => {
                       <div>
                         <h6 className="fw-semibold mb-2 text-capitalize v-center gap-1">
                           <Icon
-                            icon="icon-park-outline:people-speak"
+                            icon="mdi:currency-usd"
                             width="21"
                             height="21"
                           />
@@ -223,13 +223,13 @@ const ActivityDetails = () => {
                       <div>
                         <h6 className="fw-semibold mb-2 text-capitalize v-center gap-1">
                           <Icon
-                            icon="icon-park-outline:people-speak"
+                            icon="mdi:account-group"
                             width="21"
                             height="21"
                           />
-                          Price:
+                          Max People:
                         </h6>
-                        <p className="small">{activity?.price}</p>
+                        <p className="small">{activity?.maxPeople}</p>
                       </div>
 
                       <div>
@@ -238,37 +238,33 @@ const ActivityDetails = () => {
                           style={{ marginLeft: "-5px" }}
                         >
                           <Icon
-                            icon="system-uicons:location"
+                            icon="mdi:account-multiple"
                             width="21"
                             height="21"
                           />
-                          location:
+                          Min People:
                         </h6>
-                        <p className="small">{activity.location}</p>
+                        <p className="small">{activity?.minPeople}</p>
                       </div>
 
                       <div>
                         <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
                           <Icon
-                            icon="entypo:man"
+                            icon="mdi:information"
                             width="21"
                             height="21"
                             style={{ marginLeft: "-5px" }}
                           />
-                          age Requirement:
+                          More Info:
                         </h6>
-                        <p className="small">{activity.ageRequirement} Years</p>
+                        <p className="small">{activity?.additionalInfo}</p>
                       </div>
                       <div>
                         <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
-                          <Icon
-                            icon="game-icons:duration"
-                            width="22"
-                            height="22"
-                          />
-                          duration:
+                          <Icon icon="mdi:star" width="21" height="21" />
+                          popularity:
                         </h6>
-                        <p className="small">{activity.duration}</p>
+                        <p className="small">{activity?.popularity}</p>
                       </div>
                     </div>
                   </div>
