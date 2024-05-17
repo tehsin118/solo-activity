@@ -246,6 +246,7 @@ const ActivityDetails = () => {
                               icon="game-icons:duration"
                               width="20"
                               height="20"
+                              style={{marginLeft:"-1px"}}
                             />
                             duration:
                           </h6>
@@ -260,6 +261,7 @@ const ActivityDetails = () => {
                               icon="mdi:account-group"
                               width="21"
                               height="21"
+                              style={{marginLeft:"-1px"}}
                             />
                             Max People:
                           </h6>
@@ -274,6 +276,7 @@ const ActivityDetails = () => {
                               icon="mdi:account-multiple"
                               width="21"
                               height="21"
+                              style={{marginLeft:"-1px"}}
                             />
                             Min People:
                           </h6>
