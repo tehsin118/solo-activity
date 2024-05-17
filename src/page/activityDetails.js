@@ -1,13 +1,12 @@
 import { Icon } from "@iconify/react";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; // Import useParams to get the listing ID from the URL
+import Header from "../components/header";
+import Loader from "../components/loader";
 import Slider2 from "../components/slider/slider2";
 import useScrollToTop from "../hook/useScrollToTop";
-import Header from "../components/header";
-import dummyActivities from "./dummydata";
-import axios from "axios";
 import { AllActivitiesAPI, BaseUrl } from "../services";
-import Loader from "../components/loader";
 
 const ActivityDetails = () => {
   useScrollToTop();
@@ -175,13 +174,13 @@ const ActivityDetails = () => {
                               icon="mdi:currency-usd"
                               width="21"
                               height="21"
+                              style={{ marginLeft: "-5px" }}
                             />
                             Price:
                           </h6>
                           <p className="small">{activity?.price}</p>
                         </div>
                       )}
-
                       {activity.location && (
                         <div>
                           <h6
@@ -248,7 +247,6 @@ const ActivityDetails = () => {
                         <div>
                           <h6
                             className="fw-semibold  mb-2 text-capitalize v-center gap-1"
-                            style={{ marginLeft: "-5px" }}
                           >
                             <Icon
                               icon="mdi:account-multiple"
@@ -268,7 +266,7 @@ const ActivityDetails = () => {
                               icon="mdi:information"
                               width="21"
                               height="21"
-                              style={{ marginLeft: "-5px" }}
+                              style={{ marginLeft: "-1px" }}
                             />
                             More Info:
                           </h6>
