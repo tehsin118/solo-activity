@@ -220,8 +220,8 @@ const ActivityDetails = () => {
                           <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
                             <Icon
                               icon="game-icons:duration"
-                              width="22"
-                              height="22"
+                              width="20"
+                              height="20"
                             />
                             duration:
                           </h6>

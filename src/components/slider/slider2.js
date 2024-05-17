@@ -76,12 +76,19 @@ const Slider2 = ({ sliderData }) => {
           showIndicators={false}
         >
           {list.map((item, index) => (
-            <div>
+            <div style={{
+              marginTop:"6%"
+            }}>
               <img
                 src={item.img}
                 alt=""
                 className="m-auto pointer"
                 key={index}
+                style={{
+                  height: 500,
+                  justifyContent: "center",
+                  borderRadius:9
+                }}
               />
             </div>
           ))}
