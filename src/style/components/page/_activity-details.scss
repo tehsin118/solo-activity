@@ -399,4 +399,13 @@
   .carousel .slider-wrapper {
     max-height: unset !important;
   }
+  .ant-modal-wrap {
+    height: fit-content !important;
+  }
+  .ant-modal.img-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100% !important;
+  }
 }
