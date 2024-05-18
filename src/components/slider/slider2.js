@@ -76,13 +76,7 @@ const Slider2 = ({ sliderData }) => {
           showIndicators={false}
         >
           {list.map((item, index) => (
-            <div
-              style={
-                {
-                  // marginTop:"6%"
-                }
-              }
-            >
+            <div className="modal-img-wrapper">
               <img
                 src={item.img}
                 alt=""
