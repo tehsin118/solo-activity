@@ -218,7 +218,6 @@
   transition: all 0.3s linear;
 }
 .img-modal {
-  height: 600px !important;
   .ant-modal-content {
     background: transparent !important;
     box-shadow: none;
@@ -357,6 +356,14 @@
     .additional-details-wrapper {
       width: 100%;
       display: flex !important;
+    }
+    h6 {
+      span {
+        svg {
+          margin: 0 !important;
+        }
+        width: 26px;
+      }
     }
   }
   .add-wrap {

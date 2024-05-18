@@ -194,12 +194,14 @@ const ActivityDetails = () => {
                       {activity?.price && (
                         <div>
                           <h6 className="fw-semibold mb-2 text-capitalize v-center gap-1">
-                            <Icon
-                              icon="mdi:currency-usd"
-                              width="21"
-                              height="21"
-                              style={{ marginLeft: "-5px" }}
-                            />
+                            <span>
+                              <Icon
+                                icon="fa:usd"
+                                width="21"
+                                height="21"
+                                style={{ marginLeft: "-5px" }}
+                              />
+                            </span>
                             Price:
                           </h6>
                           <p className="small">{activity?.price}</p>
@@ -211,11 +213,13 @@ const ActivityDetails = () => {
                             className="fw-semibold  mb-2 text-capitalize v-center gap-1"
                             style={{ marginLeft: "-5px" }}
                           >
-                            <Icon
-                              icon="system-uicons:location"
-                              width="21"
-                              height="21"
-                            />
+                            <span>
+                              <Icon
+                                icon="system-uicons:location"
+                                width="21"
+                                height="21"
+                              />
+                            </span>
                             location:
                           </h6>
                           <p className="small">{activity.location}</p>
@@ -225,12 +229,14 @@ const ActivityDetails = () => {
                       {activity.ageRequirement && (
                         <div>
                           <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
-                            <Icon
-                              icon="entypo:man"
-                              width="21"
-                              height="21"
-                              style={{ marginLeft: "-5px" }}
-                            />
+                            <span>
+                              <Icon
+                                icon="entypo:man"
+                                width="21"
+                                height="21"
+                                style={{ marginLeft: "-5px" }}
+                              />
+                            </span>
                             age Requirement:
                           </h6>
                           <p className="small">
@@ -242,12 +248,14 @@ const ActivityDetails = () => {
                       {activity.duration && (
                         <div>
                           <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
-                            <Icon
-                              icon="game-icons:duration"
-                              width="20"
-                              height="20"
-                              style={{marginLeft:"-1px"}}
-                            />
+                            <span>
+                              <Icon
+                                icon="game-icons:duration"
+                                width="20"
+                                height="20"
+                                style={{ marginLeft: "-1px" }}
+                              />
+                            </span>
                             duration:
                           </h6>
                           <p className="small">{activity.duration}</p>
@@ -257,12 +265,14 @@ const ActivityDetails = () => {
                       {activity?.maxPeople && (
                         <div>
                           <h6 className="fw-semibold mb-2 text-capitalize v-center gap-1">
-                            <Icon
-                              icon="mdi:account-group"
-                              width="21"
-                              height="21"
-                              style={{marginLeft:"-1px"}}
-                            />
+                            <span>
+                              <Icon
+                                icon="mdi:account-group"
+                                width="21"
+                                height="21"
+                                style={{ marginLeft: "-1px" }}
+                              />
+                            </span>
                             Max People:
                           </h6>
                           <p className="small">{activity?.maxPeople}</p>
@@ -272,12 +282,14 @@ const ActivityDetails = () => {
                       {activity?.minPeople && (
                         <div>
                           <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
-                            <Icon
-                              icon="mdi:account-multiple"
-                              width="21"
-                              height="21"
-                              style={{marginLeft:"-1px"}}
-                            />
+                            <span>
+                              <Icon
+                                icon="mdi:account-multiple"
+                                width="21"
+                                height="21"
+                                style={{ marginLeft: "-1px" }}
+                              />
+                            </span>
                             Min People:
                           </h6>
                           <p className="small">{activity?.minPeople}</p>
@@ -287,12 +299,14 @@ const ActivityDetails = () => {
                       {activity?.additionalInfo && (
                         <div>
                           <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
-                            <Icon
-                              icon="mdi:information"
-                              width="21"
-                              height="21"
-                              style={{ marginLeft: "-1px" }}
-                            />
+                            <span>
+                              <Icon
+                                icon="mdi:information"
+                                width="21"
+                                height="21"
+                                style={{ marginLeft: "-1px" }}
+                              />
+                            </span>
                             More Info:
                           </h6>
                           <p className="small">{activity?.additionalInfo}</p>
@@ -302,7 +316,9 @@ const ActivityDetails = () => {
                       {activity?.popularity && (
                         <div>
                           <h6 className="fw-semibold  mb-2 text-capitalize v-center gap-1">
-                            <Icon icon="mdi:star" width="21" height="21" />
+                            <span>
+                              <Icon icon="mdi:star" width="21" height="21" />
+                            </span>
                             popularity:
                           </h6>
                           <p className="small">{activity?.popularity}</p>
