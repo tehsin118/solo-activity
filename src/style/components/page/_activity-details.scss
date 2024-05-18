@@ -352,13 +352,7 @@
   .op-hours {
     width: 100% !important;
   }
-  .ant-modal {
-    top: 50% !important;
-    transform: translateY(-50%);
-  }
-  .img-modal {
-    height: auto !important;
-  }
+
   .additional-details {
     .additional-details-wrapper {
       width: 100%;
@@ -390,6 +384,15 @@
         height: auto;
       }
     }
+  }
+
+  .ant-modal {
+    top: 5 0% !important;
+    vertical-align: middle !important;
+    // transform: translateY(-50%);
+  }
+  .img-modal {
+    height: auto !important;
   }
 }
 .carousel .slider-wrapper {
