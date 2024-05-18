@@ -33,6 +33,7 @@ const Home = () => {
 
   const limit = 15;
 
+  console.log(selectActivities);
   //set data getting from API
   useEffect(() => {
     setFilteredlistings(data.slice(0, limit));
