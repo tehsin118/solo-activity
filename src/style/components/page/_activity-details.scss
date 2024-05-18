@@ -357,14 +357,20 @@
       width: 100%;
       display: flex !important;
     }
-    h6 {
-      span {
-        svg {
-          margin: 0 !important;
-        }
-        width: 26px;
-      }
-    }
+    // h6 {
+    //   span {
+    //     svg {
+    //       margin: 0 !important;
+    //     }
+    //     width: 26px;
+    //   }
+    //   &.loc {
+    //     margin-left: -2px !important;
+    //   }
+    //   &.age {
+    //     margin-left: -2px !important;
+    //   }
+    // }
   }
   .add-wrap {
     flex-direction: column !important;

@@ -196,7 +196,7 @@ const ActivityDetails = () => {
                           <h6 className="fw-semibold mb-2 text-capitalize v-center gap-1">
                             <span>
                               <Icon
-                                icon="fa:usd"
+                                icon="mdi:currency-usd"
                                 width="21"
                                 height="21"
                                 style={{ marginLeft: "-5px" }}
