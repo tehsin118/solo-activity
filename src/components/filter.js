@@ -112,7 +112,7 @@ const Filter = ({ className, onSearch, activitySearch }) => {
               <input
                 type="text"
                 name="searchBox"
-                placeholder="Search here... mobile"
+                placeholder="Search here..."
                 onChange={activitySearch}
               />
               <img src={search} alt="" />
