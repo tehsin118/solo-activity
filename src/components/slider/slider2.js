@@ -76,9 +76,7 @@ const Slider2 = ({ sliderData }) => {
           showIndicators={false}
         >
           {list.map((item, index) => (
-            <div style={{
-              marginTop:"6%"
-            }}>
+            <div className="modal-img-wrapper">
               <img
                 src={item.img}
                 alt=""
@@ -87,7 +85,7 @@ const Slider2 = ({ sliderData }) => {
                 style={{
                   height: 500,
                   justifyContent: "center",
-                  borderRadius:9
+                  borderRadius: 9,
                 }}
               />
             </div>

@@ -218,7 +218,6 @@
   transition: all 0.3s linear;
 }
 .img-modal {
-  height: 600px !important;
   .ant-modal-content {
     background: transparent !important;
     box-shadow: none;
@@ -352,18 +351,61 @@
   .op-hours {
     width: 100% !important;
   }
-  .ant-modal {
-    top: 25% !important;
-  }
+
   .additional-details {
     .additional-details-wrapper {
       width: 100%;
       display: flex !important;
     }
+    // h6 {
+    //   span {
+    //     svg {
+    //       margin: 0 !important;
+    //     }
+    //     width: 26px;
+    //   }
+    //   &.loc {
+    //     margin-left: -2px !important;
+    //   }
+    //   &.age {
+    //     margin-left: -2px !important;
+    //   }
+    // }
   }
   .add-wrap {
     flex-direction: column !important;
     gap: 20px !important;
+  }
+
+  // .activity-details .banner-content {
+  //   position: absolute;
+  //   left: 0px;
+  //   right: 0;
+  //   z-index: 3;
+  //   bottom: 10%;
+  // }
+  .activity-details .banner-content h1 {
+    color: #fff;
+    font-size: 40px;
+  }
+  .carousel .slider-wrapper {
+    .slide.selected {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        height: auto;
+      }
+    }
+  }
+
+  .ant-modal {
+    top: 5 0% !important;
+    vertical-align: middle !important;
+    // transform: translateY(-50%);
+  }
+  .img-modal {
+    height: auto !important;
   }
 }
 .carousel .slider-wrapper {
